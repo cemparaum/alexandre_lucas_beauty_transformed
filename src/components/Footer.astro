@@ -12,8 +12,8 @@
       
       <!-- Brand & Logo -->
       <div class="lg:col-span-1">
-        <a href="/" class="inline-block mb-6 cursor-pointer cursor-hover">
-          <img src="/images/logoAlexandre.png" alt="ALEXANDRE LUCAS Beauty Transformed" class="h-10 w-auto object-contain mix-blend-lighten opacity-90" />
+        <a href={import.meta.env.BASE_URL} class="inline-block mb-6 cursor-pointer cursor-hover">
+          <img src={import.meta.env.BASE_URL + "images/logoAlexandre.png"} alt="ALEXANDRE LUCAS Beauty Transformed" class="h-10 w-auto object-contain mix-blend-lighten opacity-90" />
         </a>
         <p class="text-white/70 font-light text-sm leading-relaxed mb-6">
           O santuário da alta estética capilar, onde exclusividade e arte se encontram em total privacidade.
@@ -32,10 +32,10 @@
       <div>
         <h4 class="font-mono text-xs uppercase tracking-[0.2em] text-[#b88e3c] mb-6">A Experiência</h4>
         <ul class="space-y-4 text-sm font-light">
-          <li><a href="/#experiencia" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Visagismo e Design</a></li>
-          <li><a href="/servicos" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Coloração Premium</a></li>
-          <li><a href="/servicos" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Rituais de Tratamento</a></li>
-          <li><a href="/#resultados" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Galeria de Resultados</a></li>
+          <li><a href={import.meta.env.BASE_URL + "#experiencia"} class="text-white/80 hover:text-[#c1c6d3] transition-colors">Visagismo e Design</a></li>
+          <li><a href={import.meta.env.BASE_URL + "servicos"} class="text-white/80 hover:text-[#c1c6d3] transition-colors">Coloração Premium</a></li>
+          <li><a href={import.meta.env.BASE_URL + "servicos"} class="text-white/80 hover:text-[#c1c6d3] transition-colors">Rituais de Tratamento</a></li>
+          <li><a href={import.meta.env.BASE_URL + "#resultados"} class="text-white/80 hover:text-[#c1c6d3] transition-colors">Galeria de Resultados</a></li>
         </ul>
       </div>
 
@@ -43,10 +43,10 @@
       <div>
         <h4 class="font-mono text-xs uppercase tracking-[0.2em] text-[#b88e3c] mb-6">Informações</h4>
         <ul class="space-y-4 text-sm font-light">
-          <li><a href="/sobre" class="text-white/80 hover:text-[#c1c6d3] transition-colors">O Espaço Privado</a></li>
-          <li><a href="/sobre" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Nossa Filosofia</a></li>
-          <li><a href="/#contato" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Políticas de Reserva</a></li>
-          <li><a href="/#contato" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Solicitar Atendimento</a></li>
+          <li><a href={import.meta.env.BASE_URL + "sobre"} class="text-white/80 hover:text-[#c1c6d3] transition-colors">O Espaço Privado</a></li>
+          <li><a href={import.meta.env.BASE_URL + "sobre"} class="text-white/80 hover:text-[#c1c6d3] transition-colors">Nossa Filosofia</a></li>
+          <li><a href={import.meta.env.BASE_URL + "#contato"} class="text-white/80 hover:text-[#c1c6d3] transition-colors">Políticas de Reserva</a></li>
+          <li><a href={import.meta.env.BASE_URL + "#contato"} class="text-white/80 hover:text-[#c1c6d3] transition-colors">Solicitar Atendimento</a></li>
         </ul>
       </div>
 

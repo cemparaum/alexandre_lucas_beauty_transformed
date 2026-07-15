@@ -4,18 +4,18 @@
 
 <nav class="absolute top-0 left-0 w-full z-50 py-6 border-b border-white/5 bg-navyDark/90 backdrop-blur-md">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-    <a class="cursor-hover flex items-center group" href="/">
-      <img src="/images/logoAlexandre.png" alt="ALEXANDRE LUCAS Beauty Transformed" class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-700 group-hover:scale-105 mix-blend-lighten" />
+    <a class="cursor-hover flex items-center group" href={import.meta.env.BASE_URL}>
+      <img src={import.meta.env.BASE_URL + "images/logoAlexandre.png"} alt="ALEXANDRE LUCAS Beauty Transformed" class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-700 group-hover:scale-105 mix-blend-lighten" />
     </a>
     
     <!-- Premium Links -->
     <div class="hidden md:flex items-center gap-5 lg:gap-8">
-      <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="/#experiencia">A Experiência</a>
-      <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="/#diferenciais">Diferenciais</a>
-      <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="/servicos">Serviços</a>
-      <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="/#resultados">Resultados</a>
-      <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="/sobre">Sobre</a>
-      <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="/#contato">Contato</a>
+      <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href={import.meta.env.BASE_URL + "#experiencia"}>A Experiência</a>
+      <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href={import.meta.env.BASE_URL + "#diferenciais"}>Diferenciais</a>
+      <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href={import.meta.env.BASE_URL + "servicos"}>Serviços</a>
+      <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href={import.meta.env.BASE_URL + "#resultados"}>Resultados</a>
+      <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href={import.meta.env.BASE_URL + "sobre"}>Sobre</a>
+      <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href={import.meta.env.BASE_URL + "#contato"}>Contato</a>
     </div>
   </div>
 </nav>

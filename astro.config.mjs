@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://cemparaum.github.io',
+  base: '/alexandre_lucas_beauty_transformed',
   vite: {
     plugins: [tailwindcss()]
   }

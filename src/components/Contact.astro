@@ -1,0 +1,104 @@
+---
+// src/components/Contact.astro
+---
+
+<section id="contato" class="relative py-32 md:py-48 overflow-hidden bg-transparent">
+  
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-20 reveal">
+      <div class="inline-flex items-center justify-center gap-3 mb-6">
+        <div class="w-12 h-[1px] bg-champagneGold"></div>
+        <span class="text-[10px] font-mono uppercase tracking-[0.4em] text-champagneGold font-bold">Reserva Privada</span>
+        <div class="w-12 h-[1px] bg-champagneGold"></div>
+      </div>
+      <h2 class="font-serif text-5xl md:text-6xl text-white tracking-tighter leading-tight">
+        Sua Experiência <br/> <span class="italic text-champagneGold font-light">Começa Aqui</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Address Info Side -->
+      <div class="lg:col-span-5 space-y-12 lg:pr-8 pt-4 reveal delay-100">
+        <div>
+          <h3 class="font-mono text-sm uppercase tracking-[0.3em] text-champagneGold mb-4">Localização</h3>
+          <p class="text-white/90 font-light text-lg leading-relaxed mb-2">
+            Av. Paulista, 2073 - Conjunto Nacional<br/>
+            Torre Norte, Cj. 1502
+          </p>
+          <p class="text-silverSteel text-sm">Cerqueira César, São Paulo - SP</p>
+          
+          <a href="#" class="inline-flex items-center gap-2 mt-6 text-xs font-mono uppercase tracking-[0.2em] text-champagneGold hover:text-white transition-colors">
+            <span class="iconify w-4 h-4" data-icon="lucide:map-pin"></span>
+            Obter Direções Privadas
+          </a>
+        </div>
+
+        <div>
+          <h3 class="font-mono text-sm uppercase tracking-[0.3em] text-champagneGold mb-4">Atendimento Exclusivo</h3>
+          <p class="text-white/90 font-light text-lg leading-relaxed">
+            Terça a Sábado<br/>
+            <span class="text-silverSteel text-base">10:00 às 20:00</span>
+          </p>
+          <p class="text-silverSteel text-xs mt-3 italic">* Somente com hora marcada.</p>
+        </div>
+        
+        <div>
+          <h3 class="font-mono text-sm uppercase tracking-[0.3em] text-champagneGold mb-4">Concierge</h3>
+          <p class="text-white/90 font-light text-lg leading-relaxed mb-1">+55 (11) 99999-9999</p>
+          <p class="text-silverSteel text-sm">concierge@beautytransformed.com</p>
+        </div>
+      </div>
+
+      <!-- Form Side -->
+      <div class="lg:col-span-7 reveal delay-300">
+        <div class="relative w-full rounded-[2rem] p-[1px] overflow-hidden shadow-[0_0_40px_rgba(212,178,111,0.1)] group">
+          <!-- Animated Rotating Border -->
+          <div class="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_75%,#d4b26f_100%)] animate-[spin_4s_linear_infinite]"></div>
+          
+          <!-- Inner Solid Panel -->
+          <div class="rounded-[calc(2rem-1px)] p-8 md:p-12 w-full relative z-10 bg-[#1c1936]">
+          
+          <div class="mb-10 text-center relative z-10">
+            <span class="iconify w-8 h-8 text-champagneGold mx-auto mb-4" data-icon="lucide:calendar-clock"></span>
+            <h3 class="font-serif text-2xl text-white">Solicitação de Agendamento</h3>
+            <p class="text-silverSteel text-sm mt-2 font-light">Nossa equipe de concierge entrará em contato para confirmar a disponibilidade da sua reserva.</p>
+          </div>
+
+          <form class="space-y-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input type="text" placeholder="Nome Completo" class="w-full bg-white/5 border border-white/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:border-champagneGold focus:bg-champagneGold/5 transition-all font-light placeholder-white/40" />
+              <input type="tel" placeholder="Telefone / WhatsApp" class="w-full bg-white/5 border border-white/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:border-champagneGold focus:bg-champagneGold/5 transition-all font-light placeholder-white/40" />
+            </div>
+
+            <div class="relative">
+              <select class="w-full bg-white/5 border border-white/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:border-champagneGold focus:bg-champagneGold/5 transition-all font-light appearance-none cursor-pointer">
+                <option value="" class="bg-navyDark text-silverSteel">Experiência Desejada...</option>
+                <option value="corte" class="bg-navyDark text-white">Design de Corte & Assinatura Visual</option>
+                <option value="coloracao" class="bg-navyDark text-white">Coloração Premium & Reflexos</option>
+                <option value="tratamento" class="bg-navyDark text-white">Ritual de Tratamento Capilar Avançado</option>
+                <option value="completo" class="bg-navyDark text-white">Transformação Completa (Avaliação Visagista)</option>
+              </select>
+              <div class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-white/50">
+                <span class="iconify w-5 h-5" data-icon="lucide:chevron-down"></span>
+              </div>
+            </div>
+
+            <textarea rows="3" placeholder="Nota sobre sua transformação..." class="w-full bg-white/5 border border-white/10 text-white px-5 py-4 rounded-xl focus:outline-none focus:border-champagneGold focus:bg-champagneGold/5 transition-all font-light placeholder-white/40 resize-none"></textarea>
+
+            <div class="pt-4">
+              <button type="button" class="w-full bg-champagneGold text-navyDark font-mono font-bold uppercase tracking-[0.2em] text-sm py-4 rounded-xl hover:bg-white hover:shadow-[0_0_30px_rgba(212,178,111,0.4)] transition-all duration-300">
+                Solicitar Reserva
+              </button>
+            </div>
+          </form>
+          
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

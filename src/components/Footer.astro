@@ -1,0 +1,86 @@
+---
+// src/components/Footer.astro
+---
+
+<footer class="relative pt-24 pb-12 border-t border-[#b88e3c]/30 bg-[#1c1936]/90 backdrop-blur-xl z-10 overflow-hidden">
+  
+  <!-- Subtle top glow -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#b88e3c] to-transparent opacity-50"></div>
+
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+      
+      <!-- Brand & Logo -->
+      <div class="lg:col-span-1">
+        <a href="/" class="inline-block mb-6 cursor-pointer cursor-hover">
+          <img src="/images/logoAlexandre.png" alt="ALEXANDRE LUCAS Beauty Transformed" class="h-10 w-auto object-contain mix-blend-lighten opacity-90" />
+        </a>
+        <p class="text-white/70 font-light text-sm leading-relaxed mb-6">
+          O santuário da alta estética capilar, onde exclusividade e arte se encontram em total privacidade.
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="w-8 h-8 rounded-full border border-[#b88e3c]/40 flex items-center justify-center text-[#b88e3c] hover:bg-[#c1c6d3] hover:text-[#1c1936] hover:border-[#c1c6d3] transition-all duration-300">
+            <span class="iconify w-4 h-4" data-icon="ri:instagram-line"></span>
+          </a>
+          <a href="#" class="w-8 h-8 rounded-full border border-[#b88e3c]/40 flex items-center justify-center text-[#b88e3c] hover:bg-[#c1c6d3] hover:text-[#1c1936] hover:border-[#c1c6d3] transition-all duration-300">
+            <span class="iconify w-4 h-4" data-icon="ri:whatsapp-line"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="font-mono text-xs uppercase tracking-[0.2em] text-[#b88e3c] mb-6">A Experiência</h4>
+        <ul class="space-y-4 text-sm font-light">
+          <li><a href="/#experiencia" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Visagismo e Design</a></li>
+          <li><a href="/servicos" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Coloração Premium</a></li>
+          <li><a href="/servicos" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Rituais de Tratamento</a></li>
+          <li><a href="/#resultados" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Galeria de Resultados</a></li>
+        </ul>
+      </div>
+
+      <!-- Info -->
+      <div>
+        <h4 class="font-mono text-xs uppercase tracking-[0.2em] text-[#b88e3c] mb-6">Informações</h4>
+        <ul class="space-y-4 text-sm font-light">
+          <li><a href="/sobre" class="text-white/80 hover:text-[#c1c6d3] transition-colors">O Espaço Privado</a></li>
+          <li><a href="/sobre" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Nossa Filosofia</a></li>
+          <li><a href="/#contato" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Políticas de Reserva</a></li>
+          <li><a href="/#contato" class="text-white/80 hover:text-[#c1c6d3] transition-colors">Solicitar Atendimento</a></li>
+        </ul>
+      </div>
+
+      <!-- Horários -->
+      <div>
+        <h4 class="font-mono text-xs uppercase tracking-[0.2em] text-[#b88e3c] mb-6">Horário de Atendimento</h4>
+        <div class="text-sm font-light space-y-4">
+          <p class="text-white/80 leading-relaxed">
+            Nossas portas abrem exclusivamente para reservas de <span class="text-white font-medium">Terça a Sábado</span>, proporcionando dedicação integral à sua transformação.
+          </p>
+          <div class="flex items-center justify-between border-b border-[#b88e3c]/20 pb-2 pt-2">
+            <span class="text-white/60">Abertura</span>
+            <span class="text-[#c1c6d3]">10:00</span>
+          </div>
+          <div class="flex items-center justify-between border-b border-[#b88e3c]/20 pb-2">
+            <span class="text-white/60">Encerramento</span>
+            <span class="text-[#c1c6d3]">20:00</span>
+          </div>
+          <p class="text-[10px] text-white/50 uppercase tracking-[0.1em] mt-4">
+            * Atendimento estritamente agendado.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copy -->
+    <div class="pt-8 border-t border-[#b88e3c]/20 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-[10px] text-white/50 font-light uppercase tracking-widest text-center md:text-left">
+        &copy; {new Date().getFullYear()} Alexandre Lucas. Todos os direitos reservados.
+      </p>
+      <p class="text-[10px] text-white/40 font-light text-center md:text-right">
+        Design Exclusivo para Alta Estética
+      </p>
+    </div>
+  </div>
+</footer>

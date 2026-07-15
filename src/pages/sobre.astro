@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+	title="Nossa História | ALEXANDRE LUCAS"
+	description="O manifesto, o fundador e a filosofia por trás do espaço de alta estética Beauty Transformed."
+>
+
+  <!-- Internal Hero Section -->
+  <header class="relative pt-48 pb-32 px-6 flex flex-col items-center justify-center text-center overflow-hidden min-h-[50vh]">
+    <div class="absolute inset-0 bg-navyDark/40 z-0"></div>
+    <div class="relative z-10 max-w-4xl mx-auto reveal">
+      <div class="inline-flex items-center gap-3 mb-6">
+        <div class="w-12 h-[1px] bg-[#edd397]"></div>
+        <span class="text-[10px] font-mono uppercase tracking-[0.4em] text-[#edd397] font-bold">A Origem</span>
+        <div class="w-12 h-[1px] bg-[#edd397]"></div>
+      </div>
+      <h1 class="font-serif text-5xl md:text-7xl text-white leading-tight tracking-tighter mb-8">
+        Manifesto <br/><span class="italic text-[#edd397] font-light">Beauty Transformed</span>
+      </h1>
+    </div>
+  </header>
+
+  <main class="relative z-10 pb-32 space-y-32">
+    
+    <!-- Manifesto -->
+    <section class="px-6 relative">
+      <div class="max-w-4xl mx-auto text-center space-y-10 reveal">
+        <p class="text-white/90 font-serif text-2xl md:text-4xl leading-relaxed italic drop-shadow-md">
+          "A verdadeira estética não é sobre esconder imperfeições, mas sobre revelar a arquitetura exata de quem você nasceu para ser."
+        </p>
+        <p class="text-silverSteel/90 font-light text-lg md:text-xl leading-relaxed">
+          O conceito Beauty Transformed nasce da compreensão de que o luxo supremo reside na identidade. Em um mundo moldado por padrões efêmeros e linhas de produção estéticas, propomos um retorno à obra de arte: você. Cada atendimento é um ato de escultura, onde a técnica meticulosa encontra a intuição artística para desvendar a sua versão mais majestosa.
+        </p>
+        <p class="text-silverSteel/90 font-light text-lg md:text-xl leading-relaxed">
+          Não entregamos apenas beleza superficial. Entregamos autoridade, confiança inabalável e o poder inegável de ocupar qualquer ambiente sabendo que a sua imagem fala por si mesma antes mesmo da primeira palavra.
+        </p>
+      </div>
+    </section>
+
+    <!-- O Fundador -->
+    <section class="px-6 relative">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <div class="relative w-full aspect-square md:aspect-[4/5] rounded-[2rem] overflow-hidden group border border-[#edd397]/20 shadow-[0_0_50px_rgba(237,211,151,0.05)]">
+            <img src="/images/AboutImg.jpg" alt="Alexandre Lucas" class="w-full h-full object-cover grayscale contrast-[1.2] transition-transform duration-[2s] group-hover:scale-105 group-hover:grayscale-[0.5]" />
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#edd397]/20 via-transparent to-navyDark/60 mix-blend-overlay"></div>
+          </div>
+        </div>
+        <div class="space-y-8 reveal delay-100">
+          <h2 class="font-serif text-4xl md:text-5xl text-white tracking-tight drop-shadow-lg">
+            O Arquiteto <br/><span class="italic text-[#edd397]">Alexandre Lucas</span>
+          </h2>
+          <div class="space-y-6">
+            <p class="text-silverSteel font-light leading-relaxed text-lg">
+              Com uma técnica refinada e anos de dedicação extrema à alta estética, Alexandre Lucas transcendeu o ofício de cabeleireiro para se tornar um verdadeiro designer de identidades.
+            </p>
+            <p class="text-silverSteel font-light leading-relaxed text-lg">
+              Sua visão cirúrgica sobre visagismo e sua habilidade singular em criar pigmentações perfeitamente adaptadas a cada subtom de pele fizeram dele a assinatura por trás de algumas das mulheres mais exigentes e influentes da atualidade. 
+            </p>
+            <p class="text-[#edd397]/90 font-serif italic leading-relaxed text-xl border-l-2 border-[#edd397]/30 pl-6 mt-8">
+              "Para mim, o cabelo é o material de uma obra de arte viva. Ele emoldura o rosto, projeta poder e dita o ritmo da vida. Tratar isso com menos do que excelência absoluta é um desperdício de potencial."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Espaço & Filosofia -->
+    <section class="px-6 relative">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1 space-y-8 reveal">
+          <h2 class="font-serif text-4xl md:text-5xl text-white tracking-tight drop-shadow-lg">
+            O Espaço & <br/><span class="italic text-[#edd397]">A Experiência Singular</span>
+          </h2>
+          <div class="space-y-6">
+            <p class="text-silverSteel font-light leading-relaxed text-lg">
+              Nosso ambiente foi desenhado para ser um refúgio do caos externo. Ao cruzar nossas portas, você é envolvida por uma curadoria sensorial completa, pensada para desacelerar seus pensamentos e celebrar suas formas.
+            </p>
+            <p class="text-silverSteel font-light leading-relaxed text-lg">
+              A nossa filosofia de atendimento exige exclusividade absoluta. Sem superlotação, sem espera. Entendemos que o seu tempo é o seu ativo mais valioso. Por isso, oferecemos um serviço <span class="text-white italic">one-to-one</span>, onde a atenção da nossa equipe converge unicamente para o seu momento de transformação.
+            </p>
+            <p class="text-silverSteel font-light leading-relaxed text-lg">
+              Este não é um salão de beleza convencional. É um espaço de cuidado estético irrepreensível, onde cada detalhe sela um compromisso com a sua privacidade e o seu bem-estar.
+            </p>
+          </div>
+          <div class="pt-8">
+            <a href="/#contato" class="inline-flex items-center gap-4 px-10 py-4 rounded-full bg-[#edd397]/10 border border-[#edd397]/30 text-[#edd397] font-mono font-bold uppercase tracking-widest text-[10px] hover:bg-[#edd397] hover:text-navyDark transition-all duration-300 shadow-[0_0_20px_rgba(237,211,151,0.15)] hover:shadow-[0_0_40px_rgba(237,211,151,0.4)]">
+              Viva essa Experiência
+            </a>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2 reveal delay-100">
+          <div class="relative w-full aspect-square md:aspect-[4/5] rounded-[2rem] overflow-hidden group border border-[#edd397]/20 shadow-[0_0_50px_rgba(237,211,151,0.08)]">
+            <img src="/images/spa.jpg" alt="O Espaço" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navyDark/90 via-transparent to-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

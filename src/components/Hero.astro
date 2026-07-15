@@ -4,30 +4,6 @@
 ---
 
 <header class="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden pb-24 pt-32" id="hero">
-  <!-- Top Luxury Header Navigation -->
-  <nav class="absolute top-0 left-0 w-full z-50 py-6 border-b border-white/5 bg-navyDark">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-      <a class="cursor-hover flex items-center group" href="#hero">
-        <img src="/images/logoAlexandre.png" alt="ALEXANDRE LUCAS Beauty Transformed" class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-700 group-hover:scale-105 mix-blend-lighten" />
-      </a>
-      
-      <!-- Premium Links -->
-      <div class="hidden md:flex items-center gap-8">
-        <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="#experiencia">A Experiência</a>
-        <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="#servicos">Serviços Exclusivos</a>
-        <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="#espaco">O Espaço</a>
-        <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="#filosofia">Filosofia</a>
-      </div>
-
-      <!-- VIP Call to Action in Nav -->
-      <div>
-        <a class="cursor-hover text-[10px] font-heading font-semibold uppercase tracking-widest px-5 py-2.5 bg-white/5 border border-white/10 rounded-full text-white hover:border-champagneGold hover:text-champagneGold transition-all duration-300 backdrop-blur-md" href="#agendamento">
-          Solicitar Reserva VIP
-        </a>
-      </div>
-    </div>
-  </nav>
-
   <!-- Left Sidebar Indicator: Luxury Design Token -->
   <div class="absolute left-8 top-1/2 -translate-y-1/2 z-25 hidden lg:flex flex-col items-center gap-6">
     <span class="text-[9px] font-mono uppercase tracking-[0.3em] text-silverSteel/30 rotate-90 origin-left translate-x-2">SANTUÁRIO DE ALTA ESTÉTICA</span>
@@ -50,7 +26,7 @@
     -->
     <img 
       alt="Estética de Luxo e Cabelo Alta Costura" 
-      class="parallax-element w-full h-[120%] object-cover opacity-35 grayscale contrast-125 will-change-transform mix-blend-overlay scale-105 animate-ken-burns" 
+      class="parallax-element w-full h-[120%] object-cover opacity-25 will-change-transform scale-105 animate-ken-burns" 
       data-parallax-speed="0.25" 
       src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=1800"
     />
@@ -73,11 +49,11 @@
   <div class="relative z-20 text-center px-6 w-full max-w-5xl mx-auto flex flex-col items-center">
     
     <!-- Ambient Pulsing Glow Behind Text -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-1/2 bg-champagneGold/20 blur-[120px] rounded-full pointer-events-none animate-pulse-slow z-0"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-1/2 bg-champagneGold/10 blur-[80px] rounded-full pointer-events-none animate-pulse-slow z-0 will-change-opacity"></div>
     <!-- Premium Exclusivity Badge -->
     <div class="reveal mb-8 opacity-0" style="transition-delay: 0.3s;">
-      <div class="glass-panel inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 backdrop-blur-xl">
-        <span class="w-1.5 h-1.5 rounded-full bg-champagneGold animate-pulse shadow-[0_0_12px_#d4b26f]"></span>
+      <div class="glass-panel inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 backdrop-blur-md">
+        <span class="w-1.5 h-1.5 rounded-full bg-champagneGold animate-pulse"></span>
         <span class="text-[9px] font-heading uppercase tracking-[0.25em] text-white font-semibold">Alexandre Lucas &bull; O Santuário da Alta Estética</span>
       </div>
     </div>
@@ -89,7 +65,7 @@
     </h1>
 
     <!-- Exquisite Sub-headline -->
-    <p class="mt-8 text-base md:text-lg lg:text-xl text-silverSteel/90 font-light max-w-2xl mx-auto leading-relaxed reveal opacity-0 backdrop-blur-[2px] px-4 py-2" style="transition-delay: 1.2s;">
+    <p class="mt-8 text-base md:text-lg lg:text-xl text-silverSteel/90 font-light max-w-2xl mx-auto leading-relaxed reveal opacity-0 px-4 py-2" style="transition-delay: 1.2s;">
       Experimente o ápice do cuidado capilar em um refúgio de total privacidade. Mais do que transformação estética, revelamos o poder da sua verdadeira essência.
     </p>
 
@@ -97,7 +73,7 @@
     <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5 reveal opacity-0 w-full max-w-md mx-auto" style="transition-delay: 1.4s;">
       <!-- Primary: VIP Booking -->
       <a 
-        href="#agendamento" 
+        href="/#contato" 
         class="group relative overflow-hidden bg-gradient-to-r from-[#B48F44] via-[#FDE0A3] to-[#B48F44] text-navyDark px-10 py-4 rounded-full transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(223,184,108,0.5)] flex items-center justify-center gap-3 w-full sm:w-auto bg-[length:200%_auto] hover:bg-[position:right_center] border border-[#FDE0A3]/50"
       >
         <span class="relative z-10 text-[12px] md:text-[13px] tracking-[0.2em] uppercase font-bold text-navyDark">Agendar Experiência VIP</span>
@@ -108,7 +84,7 @@
 
       <!-- Secondary: Explore -->
       <a 
-        href="#resultados" 
+        href="/#resultados" 
         class="group relative overflow-hidden flex items-center justify-center gap-2 px-10 py-4 rounded-full border border-white/10 bg-white/5 text-silverSteel transition-all duration-500 hover:border-champagneGold/60 hover:bg-champagneGold/10 w-full sm:w-auto backdrop-blur-md hover:shadow-[0_0_30px_rgba(212,178,111,0.2)]"
       >
         <span class="relative z-10 text-[12px] md:text-[13px] tracking-[0.2em] uppercase font-medium group-hover:text-champagneGold transition-colors duration-300">Ver Resultados</span>
@@ -137,24 +113,24 @@
     // Generate Gold Dust Particles
     const dustContainer = document.getElementById('gold-dust');
     if (dustContainer) {
-      const particleCount = window.innerWidth < 768 ? 20 : 45; // Responsive count
+      const particleCount = window.innerWidth < 768 ? 10 : 25; // Greatly reduced for performance
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
-        particle.className = 'absolute rounded-full bg-champagneGold mix-blend-screen';
+        particle.className = 'absolute rounded-full bg-champagneGold'; // Removed mix-blend-screen
         
         // Randomize sizes and positions
-        const size = Math.random() * 2.5 + 0.5;
+        const size = Math.random() * 2 + 1;
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
         particle.style.left = `${Math.random() * 100}%`;
         particle.style.top = `${Math.random() * 100}%`;
         
-        // Soft opacity and glowing shadow
-        particle.style.opacity = (Math.random() * 0.4 + 0.1).toString();
-        particle.style.boxShadow = `0 0 ${size * 3}px rgba(212, 178, 111, 0.8)`;
+        // Soft opacity, no box-shadow to improve performance
+        particle.style.opacity = (Math.random() * 0.3 + 0.1).toString();
         
         // Floating animation with random delays and durations
         particle.style.animation = `float-particle ${Math.random() * 15 + 15}s linear ${Math.random() * -20}s infinite alternate`;
+        particle.style.willChange = 'transform';
         
         dustContainer.appendChild(particle);
       }
@@ -167,20 +143,17 @@
   .split-line span {
     display: block;
     opacity: 0;
-    filter: blur(24px);
     transform: translateY(15px);
     transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), 
-                transform 1s cubic-bezier(0.22, 1, 0.36, 1),
-                filter 1s cubic-bezier(0.22, 1, 0.36, 1);
+                transform 1s cubic-bezier(0.22, 1, 0.36, 1);
   }
   
   .hero-revealed .split-line span {
     opacity: 1;
-    filter: blur(0);
     transform: translateY(0);
   }
 
-  /* Ripple Effect Styles */
+  /* Ripple Effect Styles - GPU Accelerated Glow */
   .ripple-circle {
     position: absolute;
     top: 50%;
@@ -189,9 +162,13 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 2px solid rgba(212, 178, 111, 0.25);
-    box-shadow: 0 0 80px rgba(212, 178, 111, 0.15), inset 0 0 40px rgba(212, 178, 111, 0.1);
+    
+    /* Beautiful glowing wave effect */
+    border: 3px solid rgba(212, 178, 111, 0.3);
+    box-shadow: 0 0 60px rgba(212, 178, 111, 0.15), inset 0 0 30px rgba(212, 178, 111, 0.1);
+    
     opacity: 0;
+    will-change: transform, opacity; /* Forces GPU hardware acceleration */
     animation: ripple-expand 10.5s cubic-bezier(0.1, 0.5, 0.7, 1) infinite;
   }
 
@@ -199,12 +176,11 @@
     0% {
       transform: translate(-50%, -50%) scale(0);
       opacity: 0.8;
-      border-width: 4px;
+      /* Notice: We DO NOT animate border-width here to prevent CPU repaints */
     }
     100% {
       transform: translate(-50%, -50%) scale(1.5);
       opacity: 0;
-      border-width: 1px;
     }
   }
 </style>

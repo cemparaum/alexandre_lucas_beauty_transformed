@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Header from '../components/Header.astro';
 
 interface Props {
 	title?: string;
@@ -38,6 +39,8 @@ const {
 		<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 	</head>
 	<body class="selection:bg-champagneGold/30 selection:text-white text-base bg-navyDark text-silverSteel overflow-x-hidden min-h-screen">
+		<Header />
+		
 		<!-- Custom Interactive Cursor -->
 		<div id="cursor"></div>
 		
@@ -52,7 +55,27 @@ const {
 			<div class="liquid-blob bg-navyDark" style="width: 650px; height: 650px; bottom: -200px; left: 15%; opacity: 0.5; animation-duration: 25s; animation-delay: -10s;"></div>
 		</div>
 
+		<!-- Global Shooting Stars -->
+		<div class="fixed inset-0 pointer-events-none overflow-hidden opacity-30 z-[-1]">
+			<div class="star-container absolute top-[10%] left-[10%]"><div class="shooting-star"></div></div>
+			<div class="star-container absolute top-[40%] left-[40%]"><div class="shooting-star" style="animation-delay: 2.5s;"></div></div>
+			<div class="star-container absolute top-[20%] right-[20%]"><div class="shooting-star" style="animation-delay: 1s;"></div></div>
+			<div class="star-container absolute top-[70%] right-[10%]"><div class="shooting-star" style="animation-delay: 4.2s;"></div></div>
+			<div class="star-container absolute top-[85%] left-[25%]"><div class="shooting-star" style="animation-delay: 0.8s;"></div></div>
+			<div class="star-container absolute top-[50%] left-[70%]"><div class="shooting-star" style="animation-delay: 5.5s;"></div></div>
+			<div class="star-container absolute top-[30%] left-[60%]"><div class="shooting-star" style="animation-delay: 3.1s;"></div></div>
+		</div>
+
 		<slot />
+
+		<!-- Back to Top Button -->
+		<button 
+			id="back-to-top" 
+			class="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-navyDark border border-champagneGold/30 text-champagneGold shadow-[0_0_15px_rgba(212,178,111,0.15)] opacity-0 translate-y-10 transition-all duration-500 hover:scale-110 hover:bg-champagneGold hover:text-navyDark cursor-hover pointer-events-none"
+			aria-label="Voltar ao topo"
+		>
+			<span class="iconify w-6 h-6" data-icon="lucide:arrow-up"></span>
+		</button>
 
 		<!-- Core Animation and Interactive Script -->
 		<script>
@@ -174,6 +197,27 @@ const {
 			}, { passive: true });
 
 			updateParallax();
+
+			// Back to Top Button Logic
+			const backToTopBtn = document.getElementById('back-to-top');
+			if (backToTopBtn) {
+				window.addEventListener('scroll', () => {
+					if (window.scrollY > 400) {
+						backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+						backToTopBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+					} else {
+						backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+						backToTopBtn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+					}
+				}, { passive: true });
+
+				backToTopBtn.addEventListener('click', () => {
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
+				});
+			}
 		</script>
 	</body>
 </html>

@@ -1,0 +1,93 @@
+---
+// src/components/About.astro
+---
+
+<section id="sobre" class="relative py-32 md:py-48 overflow-hidden group/section">
+  
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10">
+    
+    <!-- Image Side -->
+    <div class="relative w-full max-w-[500px] mx-auto lg:mx-0">
+      
+      <!-- Elements around photo -->
+      <div class="absolute top-[15%] -left-6 lg:-left-10 text-champagneGold/40 z-0">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M8 0v16M0 8h16" stroke="currentColor" stroke-width="0.5"/></svg>
+      </div>
+      <div class="absolute top-[60%] -left-12 w-32 h-32 rounded-full border border-champagneGold/10 -z-10"></div>
+      <div class="absolute top-[20%] -right-8 text-champagneGold/30 z-0">
+        <div class="w-1.5 h-1.5 rounded-full bg-champagneGold"></div>
+      </div>
+      
+      <!-- Animated Border Frame Container -->
+      <div class="relative p-[2px] group/frame z-10">
+        
+        <!-- Hover Glow Behind Photo -->
+        <div class="absolute inset-0 bg-champagneGold/0 group-hover/frame:bg-champagneGold/40 blur-3xl rounded-t-full rounded-b-xl transition-all duration-1000 scale-90 group-hover/frame:scale-110 -z-20"></div>
+
+        <!-- Main Image Container -->
+        <div class="relative rounded-t-full rounded-b-xl overflow-hidden aspect-[3/4] bg-[#0a0a0a] z-10 w-full h-full">
+           <img 
+             src="/images/AboutImg.jpg" 
+             alt="Alexandre Lucas - O Criador" 
+             class="w-full h-full object-cover grayscale contrast-[1.2] scale-110 group-hover/frame:scale-100 group-hover/frame:grayscale-[0.2] transition-all duration-1000" 
+           />
+           <!-- Cold Silver Steel Reflection Overlay -->
+           <div class="absolute inset-0 bg-gradient-to-tr from-silverSteel/20 via-transparent to-navyDark/40 mix-blend-overlay pointer-events-none transition-opacity duration-1000 group-hover/frame:opacity-50"></div>
+        </div>
+
+      </div>
+      
+      <!-- Floating Glass Panel -->
+      <div class="absolute -bottom-10 -right-4 lg:-right-12 w-64 md:w-80 bg-white/5 border border-champagneGold/30 rounded-[2rem] p-6 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] z-20">
+         <div class="absolute top-4 left-6 text-champagneGold/20">
+           <span class="iconify w-12 h-12" data-icon="lucide:quote"></span>
+         </div>
+         <p class="font-serif text-2xl md:text-3xl text-white mb-3 italic relative z-10">"A beleza nunca é padronizada. Ela é uma assinatura."</p>
+         <div class="flex items-center gap-3 relative z-10">
+           <div class="w-8 h-[1px] bg-champagneGold"></div>
+           <span class="text-[10px] uppercase tracking-[0.3em] text-champagneGold font-bold">Alexandre Lucas</span>
+         </div>
+      </div>
+    </div>
+    
+    <!-- Content Side -->
+    <div class="mt-16 lg:mt-0 lg:pl-10">
+      <!-- Eyebrow -->
+      <div class="inline-flex items-center gap-3 mb-8">
+        <div class="w-8 h-[1px] bg-champagneGold"></div>
+        <span class="text-[10px] font-mono uppercase tracking-[0.4em] text-champagneGold font-bold">A Visão</span>
+      </div>
+      
+      <!-- Title -->
+      <h2 class="font-serif text-5xl md:text-7xl text-white tracking-tighter mb-10 leading-[1.1]">
+        O Arquiteto da <br/>
+        <span class="italic text-champagneGold font-light">Identidade</span>
+      </h2>
+      
+      <!-- Text content -->
+      <div class="space-y-6">
+        <p class="text-white/90 font-light text-lg md:text-xl leading-relaxed">
+          Mais do que transformar cabelos, <strong>Alexandre Lucas</strong> decodifica a essência de cada cliente. A filosofia <em class="text-champagneGold">Beauty Transformed</em> nasceu de uma ruptura com o padrão industrializado: aqui, cada fio é esculpido com precisão matemática para refletir o que você tem de mais sofisticado.
+        </p>
+        
+        <p class="text-silverSteel font-light text-base md:text-lg leading-relaxed">
+          Em um ambiente onde a discrição e a exclusividade ditam as regras, nossa missão é elevar sua imagem pessoal a um patamar internacional. Cada procedimento é um ritual sob medida, desenhado não apenas para mudar sua aparência, mas para solidificar o seu poder.
+        </p>
+      </div>
+      
+      <!-- CTA -->
+      <div class="mt-14">
+        <a href="/sobre" class="inline-flex items-center gap-5 group cursor-pointer relative overflow-hidden rounded-full p-1 pr-6 bg-white/5 border border-white/10 hover:border-champagneGold/50 hover:bg-white/10 transition-all duration-500 shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:shadow-[0_0_40px_rgba(212,178,111,0.3)]">
+          <span class="w-14 h-14 rounded-full bg-champagneGold flex items-center justify-center transition-all duration-500 scale-100 group-hover:scale-90 group-hover:bg-white">
+            <span class="iconify w-6 h-6 text-black" data-icon="lucide:arrow-right"></span>
+          </span>
+          <span class="text-xs md:text-sm font-mono uppercase tracking-[0.3em] text-white group-hover:text-champagneGold transition-colors font-bold relative z-10">
+            Conheça nossa história
+          </span>
+        </a>
+      </div>
+      
+    </div>
+
+  </div>
+</section>

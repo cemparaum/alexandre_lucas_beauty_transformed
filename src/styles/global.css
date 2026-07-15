@@ -33,10 +33,15 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  cursor: none;
   overflow-x: hidden;
   background-color: #1c1936; /* Logo Brand Blue */
   color: #c1c6d3; /* Silver Steel / Soft Slate */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
 }
 
 h1, h2, h3, h4, h5, h6, .font-title {
@@ -148,6 +153,12 @@ h1, h2, h3, h4, h5, h6, .font-title {
   transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
   mix-blend-mode: overlay;
   backdrop-filter: blur(2px);
+}
+
+@media (hover: none), (pointer: coarse) {
+  #cursor {
+    display: none !important;
+  }
 }
 
 #cursor.hovered {
@@ -294,4 +305,41 @@ h1, h2, h3, h4, h5, h6, .font-title {
   0% { opacity: 0.2; transform: scale(0.95); }
   50% { opacity: 0.5; transform: scale(1.05); }
   100% { opacity: 0.2; transform: scale(0.95); }
+}
+
+/* Shooting Star Effects */
+.star-container {
+  transform: rotate(-45deg);
+}
+.shooting-star {
+  position: relative;
+  width: 150px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(212,178,111,0), rgba(212,178,111,1));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px rgba(212,178,111,0.8));
+  animation: tail 5s ease-in-out infinite, shooting 5s ease-in-out infinite;
+}
+
+.shooting-star::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  width: 2px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px rgba(212, 178, 111, 0.5);
+}
+
+@keyframes tail {
+  0% { width: 0; }
+  30% { width: 150px; }
+  100% { width: 0; }
+}
+
+@keyframes shooting {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(1500px); }
 }

@@ -1,0 +1,123 @@
+---
+// src/components/Differentials.astro
+---
+
+<section id="diferenciais" class="relative z-10 py-32 md:py-48 px-6 overflow-hidden min-h-screen">
+  <!-- Subtle Silver & Medical Aesthetics Accents -->
+  <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-silverSteel/20 to-transparent"></div>
+  <div class="absolute top-1/4 right-0 w-[800px] h-[800px] rounded-full bg-champagneGold/5 blur-[120px] pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-silverSteel/5 blur-[100px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
+      
+      <!-- Sticky Left Panel: Title -->
+      <div class="lg:w-5/12">
+        <div class="sticky top-40 reveal">
+          <div class="inline-flex items-center gap-3 mb-8">
+            <div class="w-12 h-[1px] bg-champagneGold"></div>
+            <span class="text-[10px] font-mono uppercase tracking-[0.4em] text-champagneGold font-bold">O Padrão Alexandre Lucas</span>
+          </div>
+          
+          <h2 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-[1.05] tracking-tighter mb-8">
+            A Essência<br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-champagneGold to-white italic font-light drop-shadow-sm">da Verdadeira</span><br/>
+            Transformação.
+          </h2>
+          
+          <p class="text-silverSteel/70 font-light leading-relaxed text-base md:text-lg border-l border-champagneGold/30 pl-6 max-w-md">
+            Descartamos promessas superficiais. Nosso foco é a construção de uma beleza autêntica e saudável, ancorada em técnica refinada e respeito absoluto à sua identidade e bem-estar.
+          </p>
+
+          <!-- Scroll Down Indicator (visible on desktop only) -->
+          <div class="hidden lg:flex mt-16 items-center gap-4 text-champagneGold/40 animate-pulse">
+            <span class="iconify w-6 h-6" data-icon="lucide:arrow-down"></span>
+            <span class="text-[10px] tracking-[0.2em] uppercase font-bold">Role para descobrir</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrolling Right Panel: The Points -->
+      <div class="lg:w-7/12 flex flex-col gap-24 lg:gap-40 pt-10 lg:pt-0">
+        
+        <!-- Point 1 -->
+        <div class="group relative reveal">
+          <!-- Giant Background Number -->
+          <div class="absolute -top-16 -left-10 md:-left-16 text-[160px] md:text-[200px] font-serif text-champagneGold/[0.03] font-bold leading-none select-none pointer-events-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-champagneGold/[0.08]">
+            01
+          </div>
+          
+          <div class="relative z-10 pl-6 md:pl-12 border-l-2 border-champagneGold/10 group-hover:border-champagneGold/50 transition-colors duration-700">
+            <h3 class="font-serif text-3xl md:text-4xl text-champagneGold mb-6 tracking-tight flex items-center gap-4">
+              <span class="w-10 h-10 rounded-full bg-champagneGold/5 border border-champagneGold/20 flex items-center justify-center text-champagneGold">
+                <span class="iconify w-5 h-5" data-icon="lucide:scan-face"></span>
+              </span>
+              Beleza Autoral
+            </h3>
+            <p class="text-silverSteel/70 font-light text-lg leading-relaxed max-w-lg">
+              Não trabalhamos com moldes ou cópias. Cada procedimento inicia com a leitura do seu rosto e do seu estilo de vida, arquitetando uma transformação que seja a assinatura exata de quem você é.
+            </p>
+          </div>
+        </div>
+
+        <!-- Point 2 -->
+        <div class="group relative reveal">
+          <div class="absolute -top-16 -left-10 md:-left-16 text-[160px] md:text-[200px] font-serif text-champagneGold/[0.03] font-bold leading-none select-none pointer-events-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-champagneGold/[0.08]">
+            02
+          </div>
+          
+          <div class="relative z-10 pl-6 md:pl-12 border-l-2 border-champagneGold/10 group-hover:border-champagneGold/50 transition-colors duration-700">
+            <h3 class="font-serif text-3xl md:text-4xl text-champagneGold mb-6 tracking-tight flex items-center gap-4">
+              <span class="w-10 h-10 rounded-full bg-champagneGold/5 border border-champagneGold/20 flex items-center justify-center text-champagneGold">
+                <span class="iconify w-5 h-5" data-icon="lucide:shield-check"></span>
+              </span>
+              Integridade Inegociável
+            </h3>
+            <p class="text-silverSteel/70 font-light text-lg leading-relaxed max-w-lg">
+              A estética nunca deve custar a saúde dos seus fios. Recusamos procedimentos que causem danos irreparáveis. Nosso compromisso é entregar resultados deslumbrantes apenas se a vitalidade da sua fibra capilar puder ser garantida.
+            </p>
+          </div>
+        </div>
+
+        <!-- Point 3 -->
+        <div class="group relative reveal">
+          <div class="absolute -top-16 -left-10 md:-left-16 text-[160px] md:text-[200px] font-serif text-champagneGold/[0.03] font-bold leading-none select-none pointer-events-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-champagneGold/[0.08]">
+            03
+          </div>
+          
+          <div class="relative z-10 pl-6 md:pl-12 border-l-2 border-champagneGold/10 group-hover:border-champagneGold/50 transition-colors duration-700">
+            <h3 class="font-serif text-3xl md:text-4xl text-champagneGold mb-6 tracking-tight flex items-center gap-4">
+              <span class="w-10 h-10 rounded-full bg-champagneGold/5 border border-champagneGold/20 flex items-center justify-center text-champagneGold">
+                <span class="iconify w-5 h-5" data-icon="lucide:scissors"></span>
+              </span>
+              Mestria e Precisão
+            </h3>
+            <p class="text-silverSteel/70 font-light text-lg leading-relaxed max-w-lg">
+              A diferença entre o comum e o extraordinário está na execução impecável. Anos de estudo transformados em precisão matemática no corte e química avançada na cor, entregando um acabamento duradouro.
+            </p>
+          </div>
+        </div>
+
+        <!-- Point 4 -->
+        <div class="group relative reveal">
+          <div class="absolute -top-16 -left-10 md:-left-16 text-[160px] md:text-[200px] font-serif text-champagneGold/[0.03] font-bold leading-none select-none pointer-events-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-champagneGold/[0.08]">
+            04
+          </div>
+          
+          <div class="relative z-10 pl-6 md:pl-12 border-l-2 border-champagneGold/10 group-hover:border-champagneGold/50 transition-colors duration-700">
+            <h3 class="font-serif text-3xl md:text-4xl text-champagneGold mb-6 tracking-tight flex items-center gap-4">
+              <span class="w-10 h-10 rounded-full bg-champagneGold/5 border border-champagneGold/20 flex items-center justify-center text-champagneGold">
+                <span class="iconify w-5 h-5" data-icon="lucide:heart-handshake"></span>
+              </span>
+              Respeito ao Seu Tempo
+            </h3>
+            <p class="text-silverSteel/70 font-light text-lg leading-relaxed max-w-lg">
+              Sem atrasos infindáveis e sem linha de produção. Construímos um fluxo de atendimento focado em você, um verdadeiro ritual onde a técnica refinada encontra a tranquilidade de estar no centro da nossa atenção.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,351 @@
+---
+// src/components/Testimonials.astro
+---
+
+<section id="depoimentos" class="py-32 md:py-48 relative overflow-hidden">
+  <!-- Subtle background ambient -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-champagneGold/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+  <!-- 1. DEPOIMENTOS (CAROUSEL) -->
+  <div class="relative max-w-7xl mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center mb-16 reveal">
+      <div class="inline-flex items-center justify-center gap-3 mb-6">
+        <div class="w-8 h-[1px] bg-champagneGold"></div>
+        <span class="text-[10px] font-mono uppercase tracking-[0.4em] text-champagneGold font-bold">Prova Social</span>
+        <div class="w-8 h-[1px] bg-champagneGold"></div>
+      </div>
+      <h2 class="font-serif text-5xl md:text-7xl text-white tracking-tighter">
+        Vozes da <span class="italic text-champagneGold font-light">Transformação</span>
+      </h2>
+    </div>
+
+    <!-- Carousel Container (Infinite Marquee) -->
+    <div class="relative reveal delay-100 overflow-hidden w-full py-4 mask-edges">
+      <div class="flex w-max animate-marquee hover-pause">
+        
+        <!-- SET 1 -->
+        <div class="flex gap-6 pr-6">
+          <!-- Card 1 -->
+          <div class="w-[85vw] md:w-[500px] shrink-0 bg-white/[0.02] border border-white/10 rounded-[2rem] p-10 flex flex-col justify-between backdrop-blur-md relative group hover:border-champagneGold/40 transition-colors duration-700 cursor-default">
+            <span class="absolute top-8 right-8 iconify w-16 h-16 text-white/[0.03] group-hover:text-champagneGold/20 transition-colors duration-700 pointer-events-none" data-icon="lucide:quote"></span>
+            <p class="font-serif text-xl md:text-2xl text-white/90 leading-relaxed mb-10 italic relative z-10">
+              "Encontrar um espaço que una discrição absoluta e maestria técnica é raro. O Alexandre não apenas transforma, ele assina uma obra de arte respeitando quem somos. Um refúgio estético de alto padrão."
+            </p>
+            <div class="relative z-10 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <span class="iconify w-5 h-5 text-champagneGold" data-icon="lucide:user"></span>
+              </div>
+              <div>
+                <h4 class="text-white font-serif text-lg tracking-wide">Isabella M.</h4>
+                <span class="text-champagneGold text-[10px] tracking-widest uppercase font-mono mt-1 block">Empresária</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="w-[85vw] md:w-[500px] shrink-0 bg-white/[0.02] border border-white/10 rounded-[2rem] p-10 flex flex-col justify-between backdrop-blur-md relative group hover:border-champagneGold/40 transition-colors duration-700 cursor-default">
+            <span class="absolute top-8 right-8 iconify w-16 h-16 text-white/[0.03] group-hover:text-champagneGold/20 transition-colors duration-700 pointer-events-none" data-icon="lucide:quote"></span>
+            <p class="font-serif text-xl md:text-2xl text-white/90 leading-relaxed mb-10 italic relative z-10">
+              "A primeira vez que estive no salão, percebi a diferença. O silêncio, a precisão cirúrgica e o nível de personalização me fizeram sentir única. A cor do meu cabelo nunca foi tão elogiada."
+            </p>
+            <div class="relative z-10 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <span class="iconify w-5 h-5 text-champagneGold" data-icon="lucide:user"></span>
+              </div>
+              <div>
+                <h4 class="text-white font-serif text-lg tracking-wide">Victoria S.</h4>
+                <span class="text-champagneGold text-[10px] tracking-widest uppercase font-mono mt-1 block">Arquiteta</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="w-[85vw] md:w-[500px] shrink-0 bg-white/[0.02] border border-white/10 rounded-[2rem] p-10 flex flex-col justify-between backdrop-blur-md relative group hover:border-champagneGold/40 transition-colors duration-700 cursor-default">
+            <span class="absolute top-8 right-8 iconify w-16 h-16 text-white/[0.03] group-hover:text-champagneGold/20 transition-colors duration-700 pointer-events-none" data-icon="lucide:quote"></span>
+            <p class="font-serif text-xl md:text-2xl text-white/90 leading-relaxed mb-10 italic relative z-10">
+              "O que mais impressiona não é apenas a técnica inegável, mas o ritual de cuidado. É um ambiente onde a excelência é o padrão mínimo e a privacidade é levada a sério. Minha referência definitiva."
+            </p>
+            <div class="relative z-10 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <span class="iconify w-5 h-5 text-champagneGold" data-icon="lucide:user"></span>
+              </div>
+              <div>
+                <h4 class="text-white font-serif text-lg tracking-wide">Helena B.</h4>
+                <span class="text-champagneGold text-[10px] tracking-widest uppercase font-mono mt-1 block">Diretora de Arte</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="w-[85vw] md:w-[500px] shrink-0 bg-white/[0.02] border border-white/10 rounded-[2rem] p-10 flex flex-col justify-between backdrop-blur-md relative group hover:border-champagneGold/40 transition-colors duration-700 cursor-default">
+            <span class="absolute top-8 right-8 iconify w-16 h-16 text-white/[0.03] group-hover:text-champagneGold/20 transition-colors duration-700 pointer-events-none" data-icon="lucide:quote"></span>
+            <p class="font-serif text-xl md:text-2xl text-white/90 leading-relaxed mb-10 italic relative z-10">
+              "A confiança que sinto ao entregar meus cabelos ao Alexandre é absoluta. O resultado é sempre sofisticado, com um cuidado impecável que vai além da estética e prioriza a saúde."
+            </p>
+            <div class="relative z-10 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <span class="iconify w-5 h-5 text-champagneGold" data-icon="lucide:user"></span>
+              </div>
+              <div>
+                <h4 class="text-white font-serif text-lg tracking-wide">Sofia L.</h4>
+                <span class="text-champagneGold text-[10px] tracking-widest uppercase font-mono mt-1 block">Médica</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SET 2 (Clone for infinite loop) -->
+        <div class="flex gap-6 pr-6">
+          <!-- Card 1 -->
+          <div class="w-[85vw] md:w-[500px] shrink-0 bg-white/[0.02] border border-white/10 rounded-[2rem] p-10 flex flex-col justify-between backdrop-blur-md relative group hover:border-champagneGold/40 transition-colors duration-700 cursor-default">
+            <span class="absolute top-8 right-8 iconify w-16 h-16 text-white/[0.03] group-hover:text-champagneGold/20 transition-colors duration-700 pointer-events-none" data-icon="lucide:quote"></span>
+            <p class="font-serif text-xl md:text-2xl text-white/90 leading-relaxed mb-10 italic relative z-10">
+              "Encontrar um espaço que una discrição absoluta e maestria técnica é raro. O Alexandre não apenas transforma, ele assina uma obra de arte respeitando quem somos. Um refúgio estético de alto padrão."
+            </p>
+            <div class="relative z-10 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <span class="iconify w-5 h-5 text-champagneGold" data-icon="lucide:user"></span>
+              </div>
+              <div>
+                <h4 class="text-white font-serif text-lg tracking-wide">Isabella M.</h4>
+                <span class="text-champagneGold text-[10px] tracking-widest uppercase font-mono mt-1 block">Empresária</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="w-[85vw] md:w-[500px] shrink-0 bg-white/[0.02] border border-white/10 rounded-[2rem] p-10 flex flex-col justify-between backdrop-blur-md relative group hover:border-champagneGold/40 transition-colors duration-700 cursor-default">
+            <span class="absolute top-8 right-8 iconify w-16 h-16 text-white/[0.03] group-hover:text-champagneGold/20 transition-colors duration-700 pointer-events-none" data-icon="lucide:quote"></span>
+            <p class="font-serif text-xl md:text-2xl text-white/90 leading-relaxed mb-10 italic relative z-10">
+              "A primeira vez que estive no salão, percebi a diferença. O silêncio, a precisão cirúrgica e o nível de personalização me fizeram sentir única. A cor do meu cabelo nunca foi tão elogiada."
+            </p>
+            <div class="relative z-10 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <span class="iconify w-5 h-5 text-champagneGold" data-icon="lucide:user"></span>
+              </div>
+              <div>
+                <h4 class="text-white font-serif text-lg tracking-wide">Victoria S.</h4>
+                <span class="text-champagneGold text-[10px] tracking-widest uppercase font-mono mt-1 block">Arquiteta</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="w-[85vw] md:w-[500px] shrink-0 bg-white/[0.02] border border-white/10 rounded-[2rem] p-10 flex flex-col justify-between backdrop-blur-md relative group hover:border-champagneGold/40 transition-colors duration-700 cursor-default">
+            <span class="absolute top-8 right-8 iconify w-16 h-16 text-white/[0.03] group-hover:text-champagneGold/20 transition-colors duration-700 pointer-events-none" data-icon="lucide:quote"></span>
+            <p class="font-serif text-xl md:text-2xl text-white/90 leading-relaxed mb-10 italic relative z-10">
+              "O que mais impressiona não é apenas a técnica inegável, mas o ritual de cuidado. É um ambiente onde a excelência é o padrão mínimo e a privacidade é levada a sério. Minha referência definitiva."
+            </p>
+            <div class="relative z-10 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <span class="iconify w-5 h-5 text-champagneGold" data-icon="lucide:user"></span>
+              </div>
+              <div>
+                <h4 class="text-white font-serif text-lg tracking-wide">Helena B.</h4>
+                <span class="text-champagneGold text-[10px] tracking-widest uppercase font-mono mt-1 block">Diretora de Arte</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="w-[85vw] md:w-[500px] shrink-0 bg-white/[0.02] border border-white/10 rounded-[2rem] p-10 flex flex-col justify-between backdrop-blur-md relative group hover:border-champagneGold/40 transition-colors duration-700 cursor-default">
+            <span class="absolute top-8 right-8 iconify w-16 h-16 text-white/[0.03] group-hover:text-champagneGold/20 transition-colors duration-700 pointer-events-none" data-icon="lucide:quote"></span>
+            <p class="font-serif text-xl md:text-2xl text-white/90 leading-relaxed mb-10 italic relative z-10">
+              "A confiança que sinto ao entregar meus cabelos ao Alexandre é absoluta. O resultado é sempre sofisticado, com um cuidado impecável que vai além da estética e prioriza a saúde."
+            </p>
+            <div class="relative z-10 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                <span class="iconify w-5 h-5 text-champagneGold" data-icon="lucide:user"></span>
+              </div>
+              <div>
+                <h4 class="text-white font-serif text-lg tracking-wide">Sofia L.</h4>
+                <span class="text-champagneGold text-[10px] tracking-widest uppercase font-mono mt-1 block">Médica</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. TRANSFORMAÇÕES (VÍDEOS) -->
+  <div class="max-w-7xl mx-auto px-6 mt-40">
+    <div class="text-center mb-20 reveal">
+      <div class="inline-flex items-center justify-center gap-3 mb-6">
+        <div class="w-8 h-[1px] bg-silverSteel"></div>
+        <span class="text-[10px] font-mono uppercase tracking-[0.4em] text-silverSteel font-bold">O Antes e o Depois</span>
+        <div class="w-8 h-[1px] bg-silverSteel"></div>
+      </div>
+      <h2 class="font-serif text-5xl md:text-7xl text-white tracking-tighter">
+        Resultados <span class="italic text-white/50 font-light">Inegáveis</span>
+      </h2>
+    </div>
+
+    <!-- Video Carousel (Infinite Marquee) -->
+    <div class="relative overflow-hidden w-full py-4 mask-edges">
+      <div class="flex w-max animate-marquee-reverse hover-pause">
+        
+        <!-- SET 1 -->
+        <div class="flex gap-6 pr-6">
+          <!-- Video 1 -->
+          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
+            <img src="https://images.pexels.com/photos/3993212/pexels-photo-3993212.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 1" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+            
+            <!-- Play Button -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
+              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
+            </div>
+
+            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
+              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Loiro Assinatura</h3>
+              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Correção de cor e reconstrução profunda da fibra.</p>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
+            <img src="https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 2" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+            
+            <!-- Play Button -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
+              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
+            </div>
+
+            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
+              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Visagismo</h3>
+              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Corte estrutural aliado ao estudo de proporções do rosto.</p>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
+            <img src="https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 3" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+            
+            <!-- Play Button -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
+              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
+            </div>
+
+            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
+              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Morena Iluminada</h3>
+              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Contraste sutil, preservando a base natural com elegância.</p>
+            </div>
+          </div>
+
+          <!-- Video 4 -->
+          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
+            <img src="https://images.pexels.com/photos/3356170/pexels-photo-3356170.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 4" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+            
+            <!-- Play Button -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
+              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
+            </div>
+
+            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
+              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Terapia Capilar</h3>
+              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Tratamento intensivo para saúde do couro cabeludo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SET 2 (Clone for infinite loop) -->
+        <div class="flex gap-6 pr-6">
+          <!-- Video 1 -->
+          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
+            <img src="https://images.pexels.com/photos/3993212/pexels-photo-3993212.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 1" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+            
+            <!-- Play Button -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
+              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
+            </div>
+
+            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
+              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Loiro Assinatura</h3>
+              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Correção de cor e reconstrução profunda da fibra.</p>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
+            <img src="https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 2" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+            
+            <!-- Play Button -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
+              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
+            </div>
+
+            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
+              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Visagismo</h3>
+              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Corte estrutural aliado ao estudo de proporções do rosto.</p>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
+            <img src="https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 3" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+            
+            <!-- Play Button -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
+              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
+            </div>
+
+            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
+              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Morena Iluminada</h3>
+              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Contraste sutil, preservando a base natural com elegância.</p>
+            </div>
+          </div>
+
+          <!-- Video 4 -->
+          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
+            <img src="https://images.pexels.com/photos/3356170/pexels-photo-3356170.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 4" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+            
+            <!-- Play Button -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
+              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
+            </div>
+
+            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
+              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Terapia Capilar</h3>
+              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Tratamento intensivo para saúde do couro cabeludo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes marquee-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+  .animate-marquee-reverse {
+    animation: marquee-reverse 50s linear infinite;
+  }
+  .hover-pause:hover {
+    animation-play-state: paused;
+  }
+  /* Elegant gradient masks for the edges of the marquee */
+  .mask-edges {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+</style>

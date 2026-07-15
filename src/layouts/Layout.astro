@@ -84,8 +84,17 @@ const {
 			const hoverElements = document.querySelectorAll('.cursor-hover, a, button, input, select, textarea');
 
 			let lastSparkleTime = 0;
+			let isTouchDevice = false;
+			
+			// Detect touch devices to disable custom cursor and prevent it from getting stuck on tap
+			window.addEventListener('touchstart', () => {
+				isTouchDevice = true;
+				if (cursor) cursor.style.display = 'none';
+			}, { passive: true, once: true });
 			
 			document.addEventListener('mousemove', (e) => {
+				if (isTouchDevice) return;
+
 				if (cursor) {
 					// Use hardware accelerated transform instead of top/left for buttery smooth 60fps
 					cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;

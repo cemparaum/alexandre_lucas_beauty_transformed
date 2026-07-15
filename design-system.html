@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Design System | Alexandre Lucas Beauty Transformed</title>
+    
+    <!-- Iconify Script -->
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    
+    <!-- Google Fonts: Bodoni Moda (Vogue-style Didone serif for titles), Montserrat (geometric sans for subtitles), Open Sans (body) -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navyDark: '#050814',
+                        navyBrand: '#0e142f',
+                        silverSteel: '#c1c6d3',
+                        champagneGold: '#d4b26f',
+                        goldLight: '#edd397',
+                        goldDark: '#b88e3c',
+                    },
+                    fontFamily: {
+                        serif: ['"Bodoni Moda"', 'serif'],
+                        sans: ['"Open Sans"', 'sans-serif'],
+                        heading: ['"Montserrat"', 'sans-serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        :root {
+            --cursor-size: 20px;
+            --cursor-hover-size: 80px;
+            --gold-gradient: linear-gradient(135deg, #CFAC62 0%, #EDD397 30%, #B88E3C 70%, #EDD397 100%);
+            --gold-shadow: 0 0 20px rgba(212, 178, 111, 0.25);
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            cursor: none;
+            overflow-x: hidden;
+            background-color: #050814; /* Deepest Royal Navy */
+            color: #c1c6d3; /* Silver Steel / Soft Slate */
+        }
+        
+        h1, h2, h3, h4, h5, h6, .font-title {
+            font-family: 'Bodoni Moda', serif;
+            color: #ffffff;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { 
+            width: 6px; 
+        }
+        ::-webkit-scrollbar-track { 
+            background: #050814; 
+        }
+        ::-webkit-scrollbar-thumb { 
+            background: rgba(255,255,255,0.12); 
+            border-radius: 3px; 
+        }
+        ::-webkit-scrollbar-thumb:hover { 
+            background: #d4b26f; 
+        }
+        
+        /* Liquid Glass Card Style (Adapted from glass-effect2) */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.015);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+            transition: 0.5s;
+            pointer-events: none;
+            z-index: 20;
+        }
+        
+        .glass-panel:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(212, 178, 111, 0.4); /* Metallic Gold border on hover */
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 178, 111, 0.18);
+        }
+        
+        .glass-panel:hover::before {
+            left: 100%;
+            transition: 0.7s ease-in-out;
+        }
+        
+        /* Ambient Liquid Blobs */
+        .liquid-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.35;
+            z-index: -1;
+            animation: float 14s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 70px) scale(1.18); }
+        }
+        
+        /* Drifting Stars Background */
+        .stars-container {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 4s infinite ease-in-out;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
+        
+        /* Custom Cursor */
+        #cursor {
+            position: fixed; 
+            top: 0; 
+            left: 0;
+            width: var(--cursor-size); 
+            height: var(--cursor-size);
+            background-color: white; 
+            border-radius: 50%;
+            pointer-events: none; 
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
+            mix-blend-mode: overlay;
+            backdrop-filter: blur(2px);
+        }
+        
+        #cursor.hovered {
+            width: var(--cursor-hover-size); 
+            height: var(--cursor-hover-size);
+            opacity: 0.7; 
+            background-color: rgba(212, 178, 111, 0.45); 
+            mix-blend-mode: normal;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        
+        /* Text gradient logic */
+        .text-gradient {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 35px rgba(212, 178, 111, 0.35);
+        }
+        
+        /* Animation Utilities */
+        .will-change-transform { will-change: transform; }
+        .split-line { overflow: hidden; display: block; }
+        .split-line span {
+            display: block;
+            transform: translateY(100%);
+            transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .hero-revealed .split-line span { transform: translateY(0); }
+        
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(30px); 
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); 
+        }
+        .reveal.active { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+        
+        /* Custom Motion Animations */
+        @keyframes slide-right { 
+            0% { transform: translateX(-20%); } 
+            100% { transform: translateX(0%); } 
+        }
+        @keyframes slide-left { 
+            0% { transform: translateX(0%); } 
+            100% { transform: translateX(-20%); } 
+        }
+        .motion-banner-anim { animation: slide-right 4s ease-in-out infinite alternate; }
+        .motion-banner-anim-rev { animation: slide-left 5s ease-in-out infinite alternate; }
+        
+        /* Noise Overlay */
+        .noise-overlay {
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            pointer-events: none; 
+            z-index: 50; 
+            opacity: 0.035;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+        }
+        
+        /* Design System Specific Styles */
+        .ds-section { padding: 8rem 0; position: relative; }
+        
+        .ds-section-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-left: 3px solid #d4b26f;
+            padding-left: 1.25rem;
+        }
+        
+        .ds-spec-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        
+        .ds-spec-row {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .ds-spec-row td {
+            padding: 1.5rem 0;
+            vertical-align: middle;
+        }
+        
+        .ds-spec-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.4);
+            width: 200px;
+            padding-right: 2rem;
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .ds-spec-preview {
+            flex: 1;
+        }
+        
+        .ds-spec-meta {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.3);
+            text-align: right;
+            font-family: 'Space Mono', monospace;
+            width: 150px;
+            padding-left: 2rem;
+        }
+        
+        .color-swatch {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .color-info {
+            flex: 1;
+        }
+        
+        .color-name {
+            font-size: 0.875rem;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+        
+        .color-value {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: 'Space Mono', monospace;
+        }
+
+        /* Float Input Fields Styling */
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 0.75rem;
+            color: white;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: #d4b26f;
+            box-shadow: 0 0 15px rgba(212, 178, 111, 0.15);
+            background: rgba(212, 178, 111, 0.015);
+        }
+
+        .input-group label {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.875rem;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus ~ label,
+        .input-group input:not(:placeholder-shown) ~ label {
+            top: -6px;
+            font-size: 0.75rem;
+            color: #d4b26f;
+            background-color: #050814;
+            padding: 0 0.5rem;
+        }
+
+        /* Luxury Experience Option Card */
+        .luxury-option-card {
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        
+        .luxury-option-card.selected {
+            border-color: #d4b26f;
+            background: rgba(212, 178, 111, 0.05);
+            box-shadow: 0 0 25px rgba(212, 178, 111, 0.15);
+        }
+
+        /* SVG Hair Color Transition */
+        #svg-hair-path {
+            transition: fill 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+    </style>
+</head>
+<body class="selection:bg-champagneGold/30 selection:text-white text-base">
+    <div id="cursor"></div>
+    <div class="noise-overlay"></div>
+    
+    <!-- Starry Sparkling Sky Backdrop -->
+    <div class="stars-container" id="stars-backdrop"></div>
+
+    <!-- Liquid Background Layer -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
+        <!-- Liquid Blobs in Navy and Champagne Gold -->
+        <div class="liquid-blob bg-navyBrand" style="width: 550px; height: 550px; top: -150px; left: -150px; opacity: 0.35; animation-duration: 15s;"></div>
+        <div class="liquid-blob bg-champagneGold" style="width: 400px; height: 400px; top: 45%; right: -150px; opacity: 0.08; animation-duration: 20s; animation-delay: -5s;"></div>
+        <div class="liquid-blob bg-navyDark" style="width: 650px; height: 650px; bottom: -200px; left: 15%; opacity: 0.5; animation-duration: 25s; animation-delay: -10s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-[60] top-0 transition-all duration-300 py-4 bg-navyDark/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <a class="cursor-hover flex items-center gap-3" href="#hero">
+                <!-- Golden luxury emblem spark -->
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-champagneGold to-goldLight flex items-center justify-center shadow-lg">
+                    <span class="iconify text-navyDark" data-icon="lucide:sparkles" data-width="16"></span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-title font-semibold text-base md:text-lg tracking-wide text-white leading-none">ALEXANDRE LUCAS</span>
+                    <span class="font-heading text-[8px] uppercase tracking-[0.25em] text-champagneGold mt-1">Beauty Transformed</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="cursor-hover text-xs font-semibold uppercase tracking-widest text-silverSteel hover:text-white transition-colors" href="#typography">Typography</a>
+                <a class="cursor-hover text-xs font-semibold uppercase tracking-widest text-silverSteel hover:text-white transition-colors" href="#colors">Colors</a>
+                <a class="cursor-hover text-xs font-semibold uppercase tracking-widest text-silverSteel hover:text-white transition-colors" href="#components">Components</a>
+                <a class="cursor-hover text-xs font-semibold uppercase tracking-widest text-silverSteel hover:text-white transition-colors" href="#widgets">Interactive</a>
+                <a class="cursor-hover text-xs font-semibold uppercase tracking-widest text-silverSteel hover:text-white transition-colors" href="#layout">Layout</a>
+                <a class="cursor-hover text-xs font-semibold uppercase tracking-widest text-silverSteel hover:text-white transition-colors" href="#motion">Motion</a>
+                <a class="cursor-hover text-xs font-semibold uppercase tracking-widest text-silverSteel hover:text-white transition-colors" href="#icons">Icons</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden" id="hero">
+        <div class="absolute top-28 left-6 md:left-12 z-20 hidden md:block">
+            <span class="glass-panel px-3 py-1 rounded text-[10px] font-mono uppercase tracking-widest text-silverSteel border border-white/5">[ 00. DESIGN SYSTEM ]</span>
+        </div>
+        
+        <!-- Parallax BG Wrapper -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <img alt="Salon Interior" class="parallax-element w-full h-[120%] object-cover opacity-10 grayscale contrast-125 will-change-transform mix-blend-overlay" data-parallax-speed="0.4" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1600"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/45 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 w-full max-w-7xl mx-auto flex flex-col items-center">
+            <div class="reveal mb-8 opacity-0">
+                <div class="glass-panel inline-flex items-center gap-2 px-4 py-1.5 rounded-full">
+                    <span class="w-1.5 h-1.5 rounded-full bg-champagneGold animate-pulse shadow-[0_0_10px_#d4b26f]"></span>
+                    <span class="text-[10px] font-heading uppercase tracking-[0.2em] text-white font-semibold">Alexandre Lucas Beauty Transformed</span>
+                </div>
+            </div>
+            
+            <h1 class="font-title text-5xl md:text-8xl lg:text-9xl font-bold leading-[0.9] tracking-tight text-white drop-shadow-2xl">
+                <span class="split-line"><span class="block">BEAUTY</span></span>
+                <span class="split-line"><span class="block text-gradient" style="transition-delay: 100ms">TRANSFORMED</span></span>
+            </h1>
+            
+            <p class="mt-8 text-base md:text-lg text-silverSteel/80 font-light max-w-lg mx-auto leading-relaxed reveal opacity-0 delay-200 backdrop-blur-sm rounded-lg p-2">
+                An ultra-luxury design system engineered for a high-end salon, featuring the exact Bodoni Moda serif and widely-spaced Montserrat typography matching the logo.
+            </p>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 reveal opacity-0 delay-500">
+            <span class="text-[10px] font-heading uppercase tracking-[0.2em] text-silverSteel/50">Scroll Down</span>
+            <div class="glass-panel w-[1px] h-12 !bg-gradient-to-b from-champagneGold to-transparent !border-0"></div>
+        </div>
+    </header>
+
+    <!-- TYPOGRAPHY SECTION -->
+    <section class="ds-section relative z-10" id="typography">
+        <div class="absolute top-0 left-6 md:left-12 z-20 hidden md:block -translate-y-1/2">
+            <span class="glass-panel px-3 py-1 rounded text-[10px] font-mono uppercase tracking-widest text-silverSteel border border-white/5">[ 01. TYPOGRAPHY ]</span>
+        </div>
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="ds-section-title reveal">Typography</h2>
+            <table class="ds-spec-table">
+                <tbody>
+                    <tr class="ds-spec-row">
+                        <td class="ds-spec-label">Heading 1 (Logo Main)</td>
+                        <td class="ds-spec-preview">
+                            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight text-white">ALEXANDRE LUCAS</h1>
+                        </td>
+                        <td class="ds-spec-meta">72px / 1.05 · Bodoni Moda 700</td>
+                    </tr>
+                    <tr class="ds-spec-row">
+                        <td class="ds-spec-label">Heading 2 (Logo Sub)</td>
+                        <td class="ds-spec-preview">
+                            <h2 class="font-heading text-xs font-semibold tracking-[0.25em] text-champagneGold uppercase">BEAUTY TRANSFORMED</h2>
+                        </td>
+                        <td class="ds-spec-meta">12px / 1.5 · Montserrat 600</td>
+                    </tr>
+                    <tr class="ds-spec-row">
+                        <td class="ds-spec-label">Heading 3 (Section Title)</td>
+                        <td class="ds-spec-preview">
+                            <h3 class="font-serif text-3xl font-medium text-white">Clinical Aesthetics & Hair Therapy</h3>
+                        </td>
+                        <td class="ds-spec-meta">30px / 1.3 · Bodoni Moda 500</td>
+                    </tr>
+                    <tr class="ds-spec-row">
+                        <td class="ds-spec-label">Paragraph Large</td>
+                        <td class="ds-spec-preview">
+                            <p class="text-lg text-white/80 leading-relaxed max-w-md">Our salon offers personalized clinical hair therapy and bespoke visual alignment.</p>
+                        </td>
+                        <td class="ds-spec-meta">18px / 28px · Open Sans 400</td>
+                    </tr>
+                    <tr class="ds-spec-row">
+                        <td class="ds-spec-label">Paragraph Medium</td>
+                        <td class="ds-spec-preview">
+                            <p class="text-base text-silverSteel/70 leading-relaxed">Hair architecture is an art that requires perfect harmony between geometry, skin tones, and texture.</p>
+                        </td>
+                        <td class="ds-spec-meta">16px / 24px · Open Sans 400</td>
+                    </tr>
+                    <tr class="ds-spec-row">
+                        <td class="ds-spec-label">Monospace Technical</td>
+                        <td class="ds-spec-preview">
+                            <span class="text-xs font-mono text-champagneGold uppercase font-semibold">font-family: 'Space Mono';</span>
+                        </td>
+                        <td class="ds-spec-meta">12px / 1.5 · Space Mono 700</td>
+                    </tr>
+                    <tr class="ds-spec-row">
+                        <td class="ds-spec-label">Metallic Golden Glow</td>
+                        <td class="ds-spec-preview">
+                            <span class="block bg-clip-text text-transparent bg-gradient-to-r from-champagneGold via-goldLight to-goldDark font-serif text-4xl md:text-5xl font-bold">Metallic Gold Title</span>
+                        </td>
+                        <td class="ds-spec-meta">48px / 1.2 · Bodoni Moda 700</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- COLORS & SURFACES SECTION -->
+    <section class="ds-section relative z-10" id="colors">
+        <div class="absolute top-0 left-6 md:left-12 z-20 hidden md:block -translate-y-1/2">
+            <span class="glass-panel px-3 py-1 rounded text-[10px] font-mono uppercase tracking-widest text-silverSteel border border-white/5">[ 02. COLORS ]</span>
+        </div>
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="ds-section-title reveal">Colors &amp; Surfaces</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="reveal">
+                    <h3 class="font-heading text-xl font-medium mb-6 text-white tracking-widest uppercase text-xs">Luxury Brand Colors</h3>
+                    <div class="space-y-4">
+                        <!-- Primary Midnight Navy Base -->
+                        <div class="glass-panel p-6 rounded-2xl flex items-center">
+                            <div class="color-swatch" style="background-color: #050814;"></div>
+                            <div class="color-info">
+                                <div class="color-name">Midnight Royal Navy (Base Canvas)</div>
+                                <div class="color-value">#050814 (Primary dark clinical backdrop)</div>
+                            </div>
+                        </div>
+
+                        <!-- Brand Logo Navy -->
+                        <div class="glass-panel p-6 rounded-2xl flex items-center">
+                            <div class="color-swatch" style="background-color: #0e142f;"></div>
+                            <div class="color-info">
+                                <div class="color-name">Midnight Navy (Logo Background)</div>
+                                <div class="color-value">#0e142f (Derived from logo navy)</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Clean Logo White -->
+                        <div class="glass-panel p-6 rounded-2xl flex items-center">
+                            <div class="color-swatch" style="background-color: #ffffff;"></div>
+                            <div class="color-info">
+                                <div class="color-name">Clean White (Logo Foreground)</div>
+                                <div class="color-value">#ffffff (Minimal text & layout highlights)</div>
+                            </div>
+                        </div>
+
+                        <!-- Metallic Gold Swatch -->
+                        <div class="glass-panel p-6 rounded-2xl flex items-center">
+                            <div class="color-swatch bg-gradient-to-r from-champagneGold via-goldLight to-goldDark"></div>
+                            <div class="color-info">
+                                <div class="color-name">Metallic Gold Accent (Added Recommended)</div>
+                                <div class="color-value">#CFAC62 / #EDD397 / #B88E3C (Reflective Gold)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="font-heading text-xl font-medium mb-6 text-white tracking-widest uppercase text-xs">Gradients & Surfaces</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Glass Panel Swatch -->
+                        <div class="glass-panel p-6 rounded-2xl">
+                            <div class="h-24 rounded-lg bg-white/[0.015] border border-white/10 backdrop-blur-md mb-4 flex items-center justify-center text-xs text-silverSteel">Glassmorphism Sample</div>
+                            <div class="text-xs text-silverSteel/50">rgba(255,255,255,0.015) + blur(20px)</div>
+                        </div>
+                        
+                        <!-- Primary Luxury Gold Gradient -->
+                        <div class="glass-panel p-6 rounded-2xl">
+                            <div class="h-24 rounded-lg bg-gradient-to-r from-champagneGold via-goldLight to-goldDark mb-4"></div>
+                            <div class="text-xs text-silverSteel/50">Metallic Gold linear-gradient</div>
+                        </div>
+
+                        <!-- Brand Deep Navy Gradient -->
+                        <div class="glass-panel p-6 rounded-2xl">
+                            <div class="h-24 rounded-lg bg-gradient-to-br from-navyDark to-navyBrand mb-4"></div>
+                            <div class="text-xs text-silverSteel/50">from-navyDark to-navyBrand</div>
+                        </div>
+
+                        <!-- Gold Gold Luxury Gradient -->
+                        <div class="glass-panel p-6 rounded-2xl">
+                            <div class="h-24 rounded-lg bg-gradient-to-br from-goldLight to-navyDark mb-4"></div>
+                            <div class="text-xs text-silverSteel/50">from-goldLight to-navyDark</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UI COMPONENTS SECTION -->
+    <section class="ds-section relative z-10" id="components">
+        <div class="absolute top-0 left-6 md:left-12 z-20 hidden md:block -translate-y-1/2">
+            <span class="glass-panel px-3 py-1 rounded text-[10px] font-mono uppercase tracking-widest text-silverSteel border border-white/5">[ 03. COMPONENTS ]</span>
+        </div>
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="ds-section-title reveal">UI Components</h2>
+            
+            <div class="space-y-16">
+                <!-- Buttons Block -->
+                <div class="reveal">
+                    <h3 class="font-title text-2xl font-medium mb-6 text-white">Buttons</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Primary Button -->
+                        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between min-h-[140px]">
+                            <div class="mb-4 text-xs text-silverSteel font-heading uppercase tracking-widest">Primary Metallic Button</div>
+                            <button class="cursor-hover w-full py-3 px-4 bg-gradient-to-r from-champagneGold via-goldLight to-goldDark rounded-xl text-navyDark text-xs font-semibold font-heading uppercase tracking-widest hover:brightness-110 transition-all duration-300 shadow-lg shadow-yellow-950/30">
+                                Book Consultation
+                            </button>
+                        </div>
+                        
+                        <!-- Secondary Button -->
+                        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between min-h-[140px]">
+                            <div class="mb-4 text-xs text-silverSteel font-heading uppercase tracking-widest">Secondary Button</div>
+                            <button class="cursor-hover w-full py-3 px-4 glass-panel border border-white/10 rounded-xl text-white/70 text-xs font-semibold font-heading uppercase tracking-widest hover:bg-white hover:text-black hover:border-white transition-all duration-300">
+                                View Portfolio
+                            </button>
+                        </div>
+
+                        <!-- Tab Button Active -->
+                        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between min-h-[140px]">
+                            <div class="mb-4 text-xs text-silverSteel font-heading uppercase tracking-widest">Tab Button (Active)</div>
+                            <button class="cursor-hover px-6 py-2 text-xs font-semibold font-heading uppercase tracking-wide rounded bg-gradient-to-r from-champagneGold to-goldLight text-navyDark shadow-lg shadow-yellow-950/10 transition-all duration-300">
+                                Hair Styling
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Fields Block -->
+                <div class="reveal">
+                    <h3 class="font-title text-2xl font-medium mb-6 text-white">Input Fields</h3>
+                    <div class="glass-panel p-8 rounded-2xl max-w-xl">
+                        <div class="input-group">
+                            <input type="text" placeholder=" " id="inp-1"/>
+                            <label for="inp-1">Client Full Name</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" placeholder=" " id="inp-2"/>
+                            <label for="inp-2">Email Address</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards Block -->
+                <div class="reveal">
+                    <h3 class="font-title text-2xl font-medium mb-6 text-white">Cards</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Service Card -->
+                        <div class="glass-panel p-8 rounded-2xl cursor-hover group">
+                            <div class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+                                <span class="iconify text-white" data-icon="lucide:arrow-up-right" data-width="24"></span>
+                            </div>
+                            <div class="w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-champagneGold mb-6 shadow-inner">
+                                <span class="iconify" data-icon="lucide:scissors" data-stroke-width="1.5" data-width="24"></span>
+                            </div>
+                            <h3 class="font-serif text-2xl text-white tracking-tight">Luxury Cut & blow</h3>
+                            <p class="text-base text-silverSteel leading-relaxed mb-4">Personalized haircuts with hair health recovery treatments.</p>
+                            <span class="text-xs font-mono text-champagneGold font-semibold">R$ 280 — 60 MIN</span>
+                        </div>
+
+                        <!-- Gradient Card -->
+                        <div class="glass-panel p-8 rounded-2xl cursor-hover group relative overflow-hidden flex flex-col justify-end min-h-[220px]">
+                            <div class="absolute inset-0 bg-gradient-to-br from-champagneGold/10 via-navyDark/90 to-navyBrand/60 z-0"></div>
+                            <div class="relative z-10">
+                                <h3 class="font-serif text-2xl text-white tracking-tight">Golden Membership</h3>
+                                <p class="text-sm text-silverSteel leading-relaxed">Exclusivity access to clinical hair transformation schedules.</p>
+                            </div>
+                        </div>
+
+                        <!-- Stat Card -->
+                        <div class="glass-panel p-6 rounded-2xl flex items-center justify-between">
+                            <span class="text-xs font-heading uppercase tracking-wider text-silverSteel/70">Satisfied Clients</span>
+                            <span class="font-serif text-3xl font-semibold text-white">4.8k+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Badges, Tags & Navigation Dots -->
+                <div class="reveal">
+                    <h3 class="font-title text-2xl font-medium mb-6 text-white">Badges &amp; Navigation</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="glass-panel p-6 rounded-2xl space-y-4">
+                            <div class="text-xs text-silverSteel font-heading mb-2 uppercase tracking-widest">Badges & Tags</div>
+                            <div class="flex flex-wrap gap-4 items-center">
+                                <span class="glass-panel px-3 py-1 rounded text-[10px] text-white">HAIR</span>
+                                <span class="glass-panel px-3 py-1 rounded text-[10px] font-semibold font-heading uppercase tracking-widest text-champagneGold mb-2 backdrop-blur-md">TRANSFORMED</span>
+                                <span class="bg-gradient-to-r from-champagneGold to-goldLight text-navyDark text-[10px] font-bold font-heading uppercase tracking-widest px-3 py-1 rounded shadow-lg">Popular</span>
+                                <span class="bg-white text-navyDark text-[10px] font-bold font-heading px-3 py-1 rounded animate-pulse">New Service</span>
+                            </div>
+                        </div>
+
+                        <div class="glass-panel p-6 rounded-2xl space-y-4">
+                            <div class="text-xs text-silverSteel font-heading mb-2 uppercase tracking-widest">Navigation Dots</div>
+                            <div class="flex space-x-4 items-center">
+                                <button class="cursor-hover w-3 h-3 rounded-full bg-champagneGold transition-all duration-300 scale-125 shadow-[0_0_10px_#d4b26f]"></button>
+                                <button class="cursor-hover w-2 h-2 rounded-full bg-white/20 hover:bg-white/50 transition-all duration-300"></button>
+                                <button class="cursor-hover w-2 h-2 rounded-full bg-white/20 hover:bg-white/50 transition-all duration-300"></button>
+                                <button class="cursor-hover w-2 h-2 rounded-full bg-white/20 hover:bg-white/50 transition-all duration-300"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE SURPRISE WIDGETS SECTION -->
+    <section class="ds-section relative z-10" id="widgets">
+        <div class="absolute top-0 left-6 md:left-12 z-20 hidden md:block -translate-y-1/2">
+            <span class="glass-panel px-3 py-1 rounded text-[10px] font-mono uppercase tracking-widest text-silverSteel border border-white/5">[ 04. CREATIVE INTERACTIONS ]</span>
+        </div>
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="ds-section-title reveal">Bespoke Interactions</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Hair Tone Previewer Widget (Draggable and Color Selector) -->
+                <div class="lg:col-span-6 glass-panel p-8 rounded-[2rem] space-y-6 reveal">
+                    <div class="flex flex-col">
+                        <span class="text-[10px] font-mono text-champagneGold tracking-widest uppercase">Widget 01 / Visual Previewer</span>
+                        <h3 class="font-serif text-2xl text-white mt-1">Clinical Hair Tone Simulator</h3>
+                    </div>
+                    
+                    <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-navyBrand flex items-center justify-center">
+                        <!-- Silhouette SVG with hair color path -->
+                        <svg viewBox="0 0 400 400" class="w-full h-full p-6" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" id="grad-stop-1" stop-color="#CFAC62" />
+                                    <stop offset="50%" id="grad-stop-2" stop-color="#EDD397" />
+                                    <stop offset="100%" id="grad-stop-3" stop-color="#B88E3C" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Face Silhouette outline -->
+                            <path d="M200 80 C150 80, 140 130, 140 180 C140 230, 160 250, 180 270 L180 320 C180 340, 220 340, 220 320 L220 270 C240 250, 260 230, 260 180 C260 130, 250 80, 200 80 Z" fill="#12172f" />
+                            <!-- Elegant Hair Path -->
+                            <path id="svg-hair-path" d="M200 50 C110 50, 100 130, 100 200 C100 270, 110 300, 120 330 C130 270, 140 250, 150 200 C160 150, 170 120, 200 120 C230 120, 240 150, 250 200 C260 250, 270 270, 280 330 C290 300, 300 270, 300 200 C300 130, 290 50, 200 50 Z" fill="url(#hairGrad)" />
+                        </svg>
+                    </div>
+                    
+                    <!-- Controls -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-heading">
+                        <button onclick="setHairGradient('#CFAC62', '#EDD397', '#B88E3C', 'Champagne Gold')" class="py-2.5 px-2 bg-navyBrand border border-white/10 rounded-xl text-[10px] tracking-wider uppercase font-semibold text-champagneGold cursor-hover">Champagne</button>
+                        <button onclick="setHairGradient('#E5989B', '#FFD2B3', '#D48C9E', 'Rose Gold')" class="py-2.5 px-2 bg-navyBrand border border-white/10 rounded-xl text-[10px] tracking-wider uppercase font-semibold text-pink-300 cursor-hover">Rose Gold</button>
+                        <button onclick="setHairGradient('#4A2F13', '#A0522D', '#2B1B0E', 'Royal Chestnut')" class="py-2.5 px-2 bg-navyBrand border border-white/10 rounded-xl text-[10px] tracking-wider uppercase font-semibold text-amber-600 cursor-hover">Chestnut</button>
+                        <button onclick="setHairGradient('#D2D2D2', '#FFFFFF', '#9A9A9A', 'Platinum Silver')" class="py-2.5 px-2 bg-navyBrand border border-white/10 rounded-xl text-[10px] tracking-wider uppercase font-semibold text-white cursor-hover">Platinum</button>
+                    </div>
+                    <p class="text-xs text-silverSteel/60 font-light text-center" id="hair-tone-description">Currently previewing: Champagne Gold</p>
+                </div>
+
+                <!-- Bespoke Experience Customizer Widget (Click Options, update Summary Card) -->
+                <div class="lg:col-span-6 glass-panel p-8 rounded-[2rem] space-y-6 reveal">
+                    <div class="flex flex-col">
+                        <span class="text-[10px] font-mono text-champagneGold tracking-widest uppercase">Widget 02 / Bespoke Care</span>
+                        <h3 class="font-serif text-2xl text-white mt-1">Salon Visit Experience Customizer</h3>
+                    </div>
+
+                    <!-- Scents Selection -->
+                    <div class="space-y-3">
+                        <span class="text-xs font-semibold text-white font-heading">1. Select Ambient Scent Profile:</span>
+                        <div class="grid grid-cols-3 gap-3">
+                            <button onclick="selectScent(this, 'Royal Oud & Amber')" class="luxury-option-card selected p-4 rounded-xl text-center flex flex-col items-center justify-center cursor-hover">
+                                <span class="iconify text-champagneGold" data-icon="lucide:flame" data-width="20"></span>
+                                <span class="text-[10px] text-white font-semibold font-heading mt-2">Royal Oud</span>
+                            </button>
+                            <button onclick="selectScent(this, 'Jasmin Gold Mist')" class="luxury-option-card p-4 rounded-xl text-center flex flex-col items-center justify-center cursor-hover">
+                                <span class="iconify text-silverSteel" data-icon="lucide:flower-2" data-width="20"></span>
+                                <span class="text-[10px] text-white font-semibold font-heading mt-2">Jasmin Gold</span>
+                            </button>
+                            <button onclick="selectScent(this, 'Vanilla Santal Essence')" class="luxury-option-card p-4 rounded-xl text-center flex flex-col items-center justify-center cursor-hover">
+                                <span class="iconify text-silverSteel" data-icon="lucide:leaf" data-width="20"></span>
+                                <span class="text-[10px] text-white font-semibold font-heading mt-2">Santal Wood</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Welcome Drink Selection -->
+                    <div class="space-y-3">
+                        <span class="text-xs font-semibold text-white font-heading">2. Select Welcome Lounge Beverage:</span>
+                        <div class="grid grid-cols-3 gap-3">
+                            <button onclick="selectDrink(this, 'Gold-Flaked Champagne')" class="luxury-option-card selected p-4 rounded-xl text-center flex flex-col items-center justify-center cursor-hover">
+                                <span class="iconify text-champagneGold" data-icon="lucide:wine" data-width="20"></span>
+                                <span class="text-[10px] text-white font-semibold font-heading mt-2">Champagne</span>
+                            </button>
+                            <button onclick="selectDrink(this, 'Sparkling White Tea')" class="luxury-option-card p-4 rounded-xl text-center flex flex-col items-center justify-center cursor-hover">
+                                <span class="iconify text-silverSteel" data-icon="lucide:cup-soda" data-width="20"></span>
+                                <span class="text-[10px] text-white font-semibold font-heading mt-2">White Tea</span>
+                            </button>
+                            <button onclick="selectDrink(this, 'Rosemary Gin Elixir')" class="luxury-option-card p-4 rounded-xl text-center flex flex-col items-center justify-center cursor-hover">
+                                <span class="iconify text-silverSteel" data-icon="lucide:glass-water" data-width="20"></span>
+                                <span class="text-[10px] text-white font-semibold font-heading mt-2">Rosemary Elixir</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Visual Summary Card -->
+                    <div class="p-6 bg-navyDark/90 rounded-2xl border border-champagneGold/20 space-y-2">
+                        <h4 class="text-xs uppercase font-mono tracking-widest text-champagneGold font-semibold">Your Custom Booking Profile</h4>
+                        <div class="text-sm text-white font-light flex justify-between">
+                            <span>Welcome Scent:</span>
+                            <span class="font-bold text-champagneGold" id="summary-scent">Royal Oud & Amber</span>
+                        </div>
+                        <div class="text-sm text-white font-light flex justify-between">
+                            <span>Welcome Drink:</span>
+                            <span class="font-bold text-champagneGold" id="summary-drink">Gold-Flaked Champagne</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYOUT & SPACING SECTION -->
+    <section class="ds-section relative z-10" id="layout">
+        <div class="absolute top-0 left-6 md:left-12 z-20 hidden md:block -translate-y-1/2">
+            <span class="glass-panel px-3 py-1 rounded text-[10px] font-mono uppercase tracking-widest text-silverSteel border border-white/5">[ 05. LAYOUT ]</span>
+        </div>
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="ds-section-title reveal">Layout &amp; Spacing</h2>
+            
+            <div class="space-y-16">
+                <!-- Spacing Grid Layout -->
+                <div class="reveal">
+                    <h3 class="font-title text-2xl font-medium mb-6 text-white">Bento Grid Layout</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 auto-rows-[220px] gap-6">
+                        <div class="glass-panel md:col-span-2 lg:col-span-2 rounded-2xl p-6 flex flex-col justify-end">
+                            <span class="text-xs font-mono text-champagneGold">GALLERY 01</span>
+                            <h4 class="font-serif text-2xl text-white mt-2">Aura Hair Correction</h4>
+                        </div>
+                        <div class="glass-panel md:col-span-1 row-span-2 rounded-2xl p-6 flex flex-col justify-end bg-gradient-to-t from-champagneGold/10 to-transparent">
+                            <span class="text-xs font-mono text-champagneGold">STYLIST</span>
+                            <h4 class="font-serif text-2xl text-white mt-2">Alexandre Lucas</h4>
+                        </div>
+                        <div class="glass-panel rounded-2xl p-6 flex items-center justify-center">
+                            <span class="iconify text-champagneGold" data-icon="lucide:heart" data-width="32"></span>
+                        </div>
+                        <div class="glass-panel rounded-2xl p-6 flex items-center justify-center">
+                            <span class="iconify text-silverSteel" data-icon="lucide:shield-check" data-width="32"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOTION & INTERACTION SECTION -->
+    <section class="ds-section relative z-10" id="motion">
+        <div class="absolute top-0 left-6 md:left-12 z-20 hidden md:block -translate-y-1/2">
+            <span class="glass-panel px-3 py-1 rounded text-[10px] font-mono uppercase tracking-widest text-silverSteel border border-white/5">[ 06. MOTION ]</span>
+        </div>
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="ds-section-title reveal">Motion &amp; Interaction</h2>
+            
+            <div class="space-y-16">
+                <!-- Hover Effects Preview -->
+                <div class="reveal">
+                    <h3 class="font-title text-2xl font-medium mb-6 text-white">Hover Transitions</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="glass-panel p-8 rounded-2xl cursor-hover group text-center">
+                            <p class="text-white mb-2 font-serif text-lg">Glass Translate-Y Lift</p>
+                            <p class="text-xs text-silverSteel">Moves upwards 5px, border contrast increases to 35% champagneGold opacity</p>
+                        </div>
+                        <div class="glass-panel p-8 rounded-2xl cursor-hover group relative">
+                            <div class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+                                <span class="iconify text-white" data-icon="lucide:arrow-up-right" data-width="24"></span>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-white mb-2 font-serif text-lg">Indicator Reveal</p>
+                                <p class="text-xs text-silverSteel">Opacity triggers automatically on mouse enter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Motion Banners (Visual Ambient Blobs) -->
+                <div class="reveal">
+                    <h3 class="font-title text-2xl font-medium mb-6 text-white">Ambient Glow Animation</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="glass-panel p-8 rounded-2xl relative bg-navyDark overflow-hidden min-h-[160px] flex items-center justify-center">
+                            <div class="absolute w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(212,178,111,0.1)_0%,transparent_70%)] motion-banner-anim"></div>
+                            <span class="relative z-10 font-heading text-lg font-bold tracking-wider text-white">Slide Right Active</span>
+                        </div>
+                        <div class="glass-panel p-8 rounded-2xl relative bg-navyDark overflow-hidden min-h-[160px] flex items-center justify-center">
+                            <div class="absolute w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,255,255,0.06)_0%,transparent_70%)] motion-banner-anim-rev"></div>
+                            <span class="relative z-10 font-heading text-lg font-bold tracking-wider text-white">Slide Left Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ICONS SECTION -->
+    <section class="ds-section relative z-10" id="icons">
+        <div class="absolute top-0 left-6 md:left-12 z-20 hidden md:block -translate-y-1/2">
+            <span class="glass-panel px-3 py-1 rounded text-[10px] font-mono uppercase tracking-widest text-silverSteel border border-white/5">[ 07. ICONS ]</span>
+        </div>
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="ds-section-title reveal">Icons</h2>
+            
+            <div class="space-y-16">
+                <!-- Size Chart -->
+                <div class="reveal">
+                    <h3 class="font-title text-2xl font-medium mb-6 text-white">Sizes Spec</h3>
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <div class="flex items-center gap-8">
+                            <span class="iconify text-white" data-icon="lucide:zap" data-width="16"></span>
+                            <span class="text-xs text-silverSteel">16px</span>
+                            <span class="iconify text-white" data-icon="lucide:zap" data-width="20"></span>
+                            <span class="text-xs text-silverSteel">20px</span>
+                            <span class="iconify text-white" data-icon="lucide:zap" data-width="24"></span>
+                            <span class="text-xs text-silverSteel">24px</span>
+                            <span class="iconify text-white" data-icon="lucide:zap" data-width="32"></span>
+                            <span class="text-xs text-silverSteel">32px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Theme Accent Icons -->
+                <div class="reveal">
+                    <h3 class="font-title text-2xl font-medium mb-6 text-white">Accent Icons</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="glass-panel p-6 rounded-xl text-center cursor-hover group">
+                            <span class="iconify text-white group-hover:text-champagneGold transition-colors" data-icon="lucide:sparkles" data-width="24"></span>
+                            <p class="text-[10px] text-silverSteel mt-2">sparkles</p>
+                        </div>
+                        <div class="glass-panel p-6 rounded-xl text-center cursor-hover group">
+                            <span class="iconify text-white group-hover:text-champagneGold transition-colors" data-icon="lucide:scissors" data-width="24"></span>
+                            <p class="text-[10px] text-silverSteel mt-2">scissors</p>
+                        </div>
+                        <div class="glass-panel p-6 rounded-xl text-center cursor-hover group">
+                            <span class="iconify text-white group-hover:text-champagneGold transition-colors" data-icon="lucide:crown" data-width="24"></span>
+                            <p class="text-[10px] text-silverSteel mt-2">crown</p>
+                        </div>
+                        <div class="glass-panel p-6 rounded-xl text-center cursor-hover group">
+                            <span class="iconify text-white group-hover:text-champagneGold transition-colors" data-icon="lucide:flower-2" data-width="24"></span>
+                            <p class="text-[10px] text-silverSteel mt-2">flower-2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE INTERACTION SCRIPT -->
+    <script>
+        // Custom Cursor Trail
+        const cursor = document.getElementById('cursor');
+        const hoverElements = document.querySelectorAll('.cursor-hover, a, button, input');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            // Creative Sparkle trail
+            if (Math.random() < 0.2) {
+                createSparkle(e.clientX, e.clientY);
+            }
+        });
+
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'absolute pointer-events-none rounded-full bg-gradient-to-br from-champagneGold to-white';
+            const size = Math.random() * 4 + 2;
+            sparkle.style.width = size + 'px';
+            sparkle.style.height = size + 'px';
+            sparkle.style.left = x + (Math.random() * 20 - 10) + 'px';
+            sparkle.style.top = y + (Math.random() * 20 - 10) + window.scrollY + 'px';
+            sparkle.style.opacity = '0.8';
+            sparkle.style.zIndex = '9998';
+            sparkle.style.transition = 'all 0.8s ease-out';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.style.transform = 'translateY(15px) scale(0)';
+                sparkle.style.opacity = '0';
+            }, 50);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 850);
+        }
+
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+        });
+
+        // Creative Starry Sparkle Background Backdrop
+        const starsBackdrop = document.getElementById('stars-backdrop');
+        const numStars = 60;
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 1;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.animationDelay = Math.random() * 4 + 's';
+            star.style.animationDuration = Math.random() * 3 + 2 + 's';
+            starsBackdrop.appendChild(star);
+        }
+
+        // Widget 01: SVG Hair Color Simulator stops updater
+        function setHairGradient(color1, color2, color3, desc) {
+            document.getElementById('grad-stop-1').setAttribute('stop-color', color1);
+            document.getElementById('grad-stop-2').setAttribute('stop-color', color2);
+            document.getElementById('grad-stop-3').setAttribute('stop-color', color3);
+            document.getElementById('hair-tone-description').innerText = `Currently previewing: ${desc}`;
+        }
+
+        // Widget 02: Bespoke Lounge Experience Selectors
+        function selectScent(button, scentName) {
+            const buttons = button.parentElement.querySelectorAll('.luxury-option-card');
+            buttons.forEach(btn => {
+                btn.classList.remove('selected');
+                const icon = btn.querySelector('.iconify');
+                if (icon) icon.className = 'iconify text-silverSteel';
+            });
+            button.classList.add('selected');
+            const activeIcon = button.querySelector('.iconify');
+            if (activeIcon) activeIcon.className = 'iconify text-champagneGold';
+            document.getElementById('summary-scent').innerText = scentName;
+        }
+
+        function selectDrink(button, drinkName) {
+            const buttons = button.parentElement.querySelectorAll('.luxury-option-card');
+            buttons.forEach(btn => {
+                btn.classList.remove('selected');
+                const icon = btn.querySelector('.iconify');
+                if (icon) icon.className = 'iconify text-silverSteel';
+            });
+            button.classList.add('selected');
+            const activeIcon = button.querySelector('.iconify');
+            if (activeIcon) activeIcon.className = 'iconify text-champagneGold';
+            document.getElementById('summary-drink').innerText = drinkName;
+        }
+
+        // Reveal on Scroll
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            const elementVisible = 100;
+
+            reveals.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // Parallax scroll engine
+        let ticking = false;
+        
+        function updateParallax() {
+            const parallaxElements = document.querySelectorAll('.parallax-element');
+            const windowHeight = window.innerHeight;
+
+            parallaxElements.forEach(el => {
+                const speed = parseFloat(el.getAttribute('data-parallax-speed')) || 0.1;
+                const rect = el.parentElement.getBoundingClientRect();
+                const elementTop = rect.top;
+                const elementHeight = rect.height;
+
+                if (elementTop < windowHeight && elementTop + elementHeight > 0) {
+                    const center = windowHeight / 2;
+                    const elCenter = elementTop + (elementHeight / 2);
+                    const diff = center - elCenter;
+                    const yPos = diff * speed;
+                    
+                    el.style.transform = `translateY(${yPos}px)`;
+                }
+            });
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }, { passive: true });
+
+        updateParallax();
+
+        // Hero reveal on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const hero = document.querySelector('#hero');
+                if (hero) hero.classList.add('hero-revealed');
+            }, 300);
+        });
+    </script>
+</body>
+</html>

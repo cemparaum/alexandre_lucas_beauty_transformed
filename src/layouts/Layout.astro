@@ -1,0 +1,179 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "ALEXANDRE LUCAS | Beauty Transformed", 
+	description = "Salão de beleza focado no altíssimo luxo, exclusividade, atendimento VIP, privacidade e transformação estética de ponta."
+} = Astro.props;
+---
+
+<!doctype html>
+<html class="scroll-smooth" lang="pt-BR">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+		
+		<!-- Iconify Script -->
+		<script src="https://code.iconify.design/3/3.1.1/iconify.min.js" is:inline></script>
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+	</head>
+	<body class="selection:bg-champagneGold/30 selection:text-white text-base bg-navyDark text-silverSteel overflow-x-hidden min-h-screen">
+		<!-- Custom Interactive Cursor -->
+		<div id="cursor"></div>
+		
+		<!-- Visual Overlay Effects -->
+		<div class="noise-overlay"></div>
+		<div class="stars-container" id="stars-backdrop"></div>
+		
+		<!-- Floating Liquid Backdrop Decorators -->
+		<div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
+			<div class="liquid-blob bg-navyBrand" style="width: 550px; height: 550px; top: -150px; left: -150px; opacity: 0.35; animation-duration: 15s;"></div>
+			<div class="liquid-blob bg-champagneGold" style="width: 400px; height: 400px; top: 45%; right: -150px; opacity: 0.08; animation-duration: 20s; animation-delay: -5s;"></div>
+			<div class="liquid-blob bg-navyDark" style="width: 650px; height: 650px; bottom: -200px; left: 15%; opacity: 0.5; animation-duration: 25s; animation-delay: -10s;"></div>
+		</div>
+
+		<slot />
+
+		<!-- Core Animation and Interactive Script -->
+		<script>
+			// Custom Cursor Trail & Sparkles
+			const cursor = document.getElementById('cursor');
+			const hoverElements = document.querySelectorAll('.cursor-hover, a, button, input, select, textarea');
+
+			let lastSparkleTime = 0;
+			
+			document.addEventListener('mousemove', (e) => {
+				if (cursor) {
+					// Use hardware accelerated transform instead of top/left for buttery smooth 60fps
+					cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+				}
+				
+				// Throttle sparkle generation to prevent DOM overload on high-polling rate mice
+				const now = Date.now();
+				if (now - lastSparkleTime > 40 && Math.random() < 0.5) {
+					createSparkle(e.clientX, e.clientY);
+					lastSparkleTime = now;
+				}
+			}, { passive: true });
+
+			function createSparkle(x: number, y: number) {
+				const sparkle = document.createElement('div');
+				sparkle.className = 'absolute pointer-events-none rounded-full bg-gradient-to-br from-champagneGold to-white';
+				const size = Math.random() * 4 + 2;
+				sparkle.style.width = size + 'px';
+				sparkle.style.height = size + 'px';
+				sparkle.style.left = x + (Math.random() * 20 - 10) + 'px';
+				sparkle.style.top = y + (Math.random() * 20 - 10) + window.scrollY + 'px';
+				sparkle.style.opacity = '0.7';
+				sparkle.style.zIndex = '9998';
+				sparkle.style.transition = 'all 0.8s ease-out';
+				document.body.appendChild(sparkle);
+				
+				setTimeout(() => {
+					sparkle.style.transform = 'translateY(15px) scale(0)';
+					sparkle.style.opacity = '0';
+				}, 50);
+				
+				setTimeout(() => {
+					sparkle.remove();
+				}, 850);
+			}
+
+			hoverElements.forEach(el => {
+				el.addEventListener('mouseenter', () => cursor?.classList.add('hovered'));
+				el.addEventListener('mouseleave', () => cursor?.classList.remove('hovered'));
+			});
+
+			// Starry Sparkling Sky Backdrop
+			const starsBackdrop = document.getElementById('stars-backdrop');
+			if (starsBackdrop) {
+				const numStars = 60;
+				for (let i = 0; i < numStars; i++) {
+					const star = document.createElement('div');
+					star.className = 'star';
+					const size = Math.random() * 3 + 1;
+					star.style.width = size + 'px';
+					star.style.height = size + 'px';
+					star.style.left = Math.random() * 100 + 'vw';
+					star.style.top = Math.random() * 100 + 'vh';
+					star.style.animationDelay = Math.random() * 4 + 's';
+					star.style.animationDuration = Math.random() * 3 + 2 + 's';
+					starsBackdrop.appendChild(star);
+				}
+			}
+
+			// Scroll Reveal Engine
+			function revealOnScroll() {
+				const reveals = document.querySelectorAll('.reveal');
+				const windowHeight = window.innerHeight;
+				const elementVisible = 100;
+
+				reveals.forEach((reveal) => {
+					const elementTop = reveal.getBoundingClientRect().top;
+					if (elementTop < windowHeight - elementVisible) {
+						reveal.classList.add('active');
+					}
+				});
+			}
+			window.addEventListener('scroll', revealOnScroll);
+			revealOnScroll();
+
+			// Parallax scroll engine
+			let ticking = false;
+			
+			function updateParallax() {
+				const parallaxElements = document.querySelectorAll('.parallax-element') as NodeListOf<HTMLElement>;
+				const windowHeight = window.innerHeight;
+
+				parallaxElements.forEach(el => {
+					const speed = parseFloat(el.getAttribute('data-parallax-speed') || '0.1');
+					const parent = el.parentElement;
+					if (parent) {
+						const rect = parent.getBoundingClientRect();
+						const elementTop = rect.top;
+						const elementHeight = rect.height;
+
+						if (elementTop < windowHeight && elementTop + elementHeight > 0) {
+							const center = windowHeight / 2;
+							const elCenter = elementTop + (elementHeight / 2);
+							const diff = center - elCenter;
+							const yPos = diff * speed;
+							
+							el.style.transform = `translateY(${yPos}px)`;
+						}
+					}
+				});
+				ticking = false;
+			}
+
+			window.addEventListener('scroll', () => {
+				if (!ticking) {
+					window.requestAnimationFrame(updateParallax);
+					ticking = true;
+				}
+			}, { passive: true });
+
+			updateParallax();
+		</script>
+	</body>
+</html>

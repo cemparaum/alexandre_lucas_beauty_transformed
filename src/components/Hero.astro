@@ -1,0 +1,210 @@
+---
+// Hero.astro
+// Luxury HERO section for Alexandre Lucas Beauty Transformed
+---
+
+<header class="relative h-screen w-full flex items-center justify-center overflow-hidden" id="hero">
+  <!-- Top Luxury Header Navigation -->
+  <nav class="absolute top-0 left-0 w-full z-50 py-6 border-b border-white/5 bg-navyDark">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a class="cursor-hover flex items-center group" href="#hero">
+        <img src="/images/logoAlexandre.png" alt="ALEXANDRE LUCAS Beauty Transformed" class="h-10 md:h-12 w-auto object-contain drop-shadow-md transition-transform duration-700 group-hover:scale-105 mix-blend-lighten" />
+      </a>
+      
+      <!-- Premium Links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="#experiencia">A Experiência</a>
+        <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="#servicos">Serviços Exclusivos</a>
+        <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="#santuario">O Santuário</a>
+        <a class="cursor-hover text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-silverSteel hover:text-white transition-colors duration-300" href="#filosofia">Filosofia</a>
+      </div>
+
+      <!-- VIP Call to Action in Nav -->
+      <div>
+        <a class="cursor-hover text-[10px] font-heading font-semibold uppercase tracking-widest px-5 py-2.5 bg-white/5 border border-white/10 rounded-full text-white hover:border-champagneGold hover:text-champagneGold transition-all duration-300 backdrop-blur-md" href="#agendamento">
+          Solicitar Reserva VIP
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Left Sidebar Indicator: Luxury Design Token -->
+  <div class="absolute left-8 top-1/2 -translate-y-1/2 z-25 hidden lg:flex flex-col items-center gap-6">
+    <span class="text-[9px] font-mono uppercase tracking-[0.3em] text-silverSteel/30 rotate-90 origin-left translate-x-2">SANTUÁRIO DE ALTA ESTÉTICA</span>
+    <div class="w-[1px] h-24 bg-gradient-to-b from-white/10 via-champagneGold/30 to-transparent mt-20"></div>
+  </div>
+
+  <!-- Right Sidebar Coordinates: Exclusivity Signature -->
+  <div class="absolute right-8 top-1/2 -translate-y-1/2 z-25 hidden lg:flex flex-col items-center gap-6 text-right">
+    <span class="text-[9px] font-mono tracking-[0.25em] text-champagneGold rotate-90 origin-right -translate-x-2">ATENDIMENTO VIP PRIVADO</span>
+    <div class="w-[1px] h-24 bg-gradient-to-b from-transparent via-champagneGold/30 to-white/10 mt-20"></div>
+  </div>
+
+  <!-- Parallax BG Wrapper with Luxury Editorial Photography -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <!-- 
+      Luxury Editorial Backdrop Suggestion:
+      Cinematic, low-key lighting close-up of dark/blonde hair flow with golden light leaking, 
+      conveying movement, health, and sophistication. The background image uses high-contrast 
+      monochrome or desaturated styling to keep the deep Midnight Navy mood.
+    -->
+    <img 
+      alt="Estética de Luxo e Cabelo Alta Costura" 
+      class="parallax-element w-full h-[120%] object-cover opacity-35 grayscale contrast-125 will-change-transform mix-blend-overlay scale-105 animate-ken-burns" 
+      data-parallax-speed="0.25" 
+      src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=1800"
+    />
+    <!-- Deep Navy to Midnight Gradient overlays for luxurious depth -->
+    <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/50 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-navyDark/80 via-transparent to-navyDark/80"></div>
+    
+    <!-- Ripple Effects (Water Drop) originating from top center -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] max-w-[2500px] aspect-square pointer-events-none z-0">
+      <div class="ripple-circle" style="animation-delay: 0s;"></div>
+      <div class="ripple-circle" style="animation-delay: 3.5s;"></div>
+      <div class="ripple-circle" style="animation-delay: 7s;"></div>
+    </div>
+  </div>
+
+  <!-- Floating Gold Dust Particles Container -->
+  <div class="absolute inset-0 z-10 pointer-events-none overflow-hidden" id="gold-dust"></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-20 text-center px-6 w-full max-w-5xl mx-auto flex flex-col items-center">
+    
+    <!-- Ambient Pulsing Glow Behind Text -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-1/2 bg-champagneGold/20 blur-[120px] rounded-full pointer-events-none animate-pulse-slow z-0"></div>
+    <!-- Premium Exclusivity Badge -->
+    <div class="reveal mb-8 opacity-0" style="transition-delay: 0.3s;">
+      <div class="glass-panel inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 backdrop-blur-xl">
+        <span class="w-1.5 h-1.5 rounded-full bg-champagneGold animate-pulse shadow-[0_0_12px_#d4b26f]"></span>
+        <span class="text-[9px] font-heading uppercase tracking-[0.25em] text-white font-semibold">Alexandre Lucas &bull; O Santuário da Alta Estética</span>
+      </div>
+    </div>
+
+    <!-- Main Headline with Elegant Fade Reveal -->
+    <h1 class="relative font-title text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.95] tracking-tight text-white drop-shadow-3xl z-10">
+      <span class="split-line"><span class="block" style="transition-delay: 0.4s">A ARTE DA</span></span>
+      <span class="split-line"><span class="block text-gradient py-2" style="transition-delay: 0.6s">BELEZA ABSOLUTA</span></span>
+    </h1>
+
+    <!-- Exquisite Sub-headline -->
+    <p class="mt-8 text-base md:text-lg lg:text-xl text-silverSteel/90 font-light max-w-2xl mx-auto leading-relaxed reveal opacity-0 backdrop-blur-[2px] px-4 py-2" style="transition-delay: 1.2s;">
+      Experimente o ápice do cuidado capilar em um refúgio de total privacidade. Mais do que transformação estética, revelamos o poder da sua verdadeira essência.
+    </p>
+
+    <!-- CTAs with Hover Animations -->
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5 reveal opacity-0 w-full max-w-md mx-auto" style="transition-delay: 1.4s;">
+      <!-- Primary: VIP Booking -->
+      <a 
+        href="#agendamento" 
+        class="group relative overflow-hidden bg-gradient-to-r from-[#B48F44] via-[#FDE0A3] to-[#B48F44] text-navyDark px-10 py-4 rounded-full transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(223,184,108,0.5)] flex items-center justify-center gap-3 w-full sm:w-auto bg-[length:200%_auto] hover:bg-[position:right_center] border border-[#FDE0A3]/50"
+      >
+        <span class="relative z-10 text-[12px] md:text-[13px] tracking-[0.2em] uppercase font-bold text-navyDark">Agendar Experiência VIP</span>
+        <span class="iconify relative z-10 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" data-icon="lucide:arrow-right"></span>
+        <!-- Shine flash -->
+        <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/60 to-transparent group-hover:animate-[shine_1s_ease-in-out]"></div>
+      </a>
+
+      <!-- Secondary: Explore -->
+      <a 
+        href="#santuario" 
+        class="group relative overflow-hidden flex items-center justify-center gap-2 px-10 py-4 rounded-full border border-white/10 bg-white/5 text-silverSteel transition-all duration-500 hover:border-champagneGold/60 hover:bg-champagneGold/10 w-full sm:w-auto backdrop-blur-md hover:shadow-[0_0_30px_rgba(212,178,111,0.2)]"
+      >
+        <span class="relative z-10 text-[12px] md:text-[13px] tracking-[0.2em] uppercase font-medium group-hover:text-champagneGold transition-colors duration-300">O Santuário</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom Indicator: Scroll to Sanctuary -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3.5 z-30 reveal opacity-0" style="transition-delay: 1.6s;">
+    <span class="text-[9px] font-heading uppercase tracking-[0.3em] text-silverSteel/40">Descer para o Santuário</span>
+    <!-- Animated line indicator -->
+    <div class="w-[1px] h-12 bg-gradient-to-b from-champagneGold via-champagneGold/30 to-transparent relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-1/2 bg-white animate-bounce"></div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Add animation class after load
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const hero = document.querySelector('#hero');
+      if (hero) hero.classList.add('hero-revealed');
+    }, 100);
+
+    // Generate Gold Dust Particles
+    const dustContainer = document.getElementById('gold-dust');
+    if (dustContainer) {
+      const particleCount = window.innerWidth < 768 ? 20 : 45; // Responsive count
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'absolute rounded-full bg-champagneGold mix-blend-screen';
+        
+        // Randomize sizes and positions
+        const size = Math.random() * 2.5 + 0.5;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        
+        // Soft opacity and glowing shadow
+        particle.style.opacity = (Math.random() * 0.4 + 0.1).toString();
+        particle.style.boxShadow = `0 0 ${size * 3}px rgba(212, 178, 111, 0.8)`;
+        
+        // Floating animation with random delays and durations
+        particle.style.animation = `float-particle ${Math.random() * 15 + 15}s linear ${Math.random() * -20}s infinite alternate`;
+        
+        dustContainer.appendChild(particle);
+      }
+    }
+  });
+</script>
+
+<style>
+  /* Elegant soft fade-in synced with wave */
+  .split-line span {
+    display: block;
+    opacity: 0;
+    filter: blur(24px);
+    transform: translateY(15px);
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), 
+                transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .hero-revealed .split-line span {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+
+  /* Ripple Effect Styles */
+  .ripple-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid rgba(212, 178, 111, 0.25);
+    box-shadow: 0 0 80px rgba(212, 178, 111, 0.15), inset 0 0 40px rgba(212, 178, 111, 0.1);
+    opacity: 0;
+    animation: ripple-expand 10.5s cubic-bezier(0.1, 0.5, 0.7, 1) infinite;
+  }
+
+  @keyframes ripple-expand {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0.8;
+      border-width: 4px;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0;
+      border-width: 1px;
+    }
+  }
+</style>

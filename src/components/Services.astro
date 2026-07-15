@@ -1,0 +1,204 @@
+---
+// src/components/Services.astro
+---
+
+<section id="experiencia" class="relative z-10 py-32 px-6 overflow-hidden min-h-screen flex flex-col justify-center">
+  <div class="max-w-[1400px] mx-auto w-full">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col items-center justify-center text-center mb-16 reveal">
+      <div class="inline-flex items-center gap-3 mb-6">
+        <div class="w-12 h-[1px] bg-champagneGold"></div>
+        <span class="text-[10px] font-mono uppercase tracking-[0.4em] text-champagneGold">Nossa Arte</span>
+        <div class="w-12 h-[1px] bg-champagneGold"></div>
+      </div>
+      <h2 class="font-serif text-5xl md:text-7xl text-white leading-tight tracking-tighter">
+        As Nossas <span class="text-gradient italic">Assinaturas</span>
+      </h2>
+    </div>
+
+    <!-- Innovative Accordion Layout -->
+    <div class="flex flex-col md:flex-row h-[70vh] w-full gap-3 md:gap-4" id="services-accordion">
+      
+      <!-- Panel 1: Visagismo -->
+      <div class="service-panel is-expanded relative transition-all duration-[800ms] ease-[cubic-bezier(0.4,0,0.2,1)] bg-white/[0.015] border border-white/10 rounded-[2rem] overflow-hidden cursor-pointer group">
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f10c5e7b?auto=format&fit=crop&q=80&w=1000" alt="Visagismo" class="absolute inset-0 w-full h-full object-cover transition-all duration-[1.5s] scale-110 opacity-0 mix-blend-overlay panel-bg" />
+        
+        <!-- Collapsed Vertical Title -->
+        <div class="content-collapsed absolute inset-0 flex items-center justify-center transition-opacity duration-500">
+           <h3 class="font-serif text-xl md:text-3xl text-silverSteel/40 tracking-[0.3em] uppercase md:-rotate-90 whitespace-nowrap transition-transform duration-500 group-hover:text-champagneGold/50 group-hover:scale-110">Visagismo</h3>
+        </div>
+        
+        <!-- Expanded Content -->
+        <div class="content-expanded absolute inset-0 p-8 md:p-12 flex flex-col justify-end transition-all duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent z-0"></div>
+          <div class="absolute inset-0 bg-gradient-to-b from-champagneGold/10 to-transparent z-0 mix-blend-overlay"></div>
+          
+          <div class="relative z-10 transform transition-transform duration-700 content-inner">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-champagneGold mb-6 border border-white/20 shadow-[0_0_30px_rgba(212,178,111,0.2)]">
+               <span class="iconify w-7 h-7 md:w-8 md:h-8" data-icon="lucide:palette"></span>
+            </div>
+            <h3 class="font-serif text-3xl md:text-5xl text-white mb-4 tracking-tight drop-shadow-lg">Visagismo & Cor</h3>
+            <p class="text-silverSteel font-light max-w-sm text-sm md:text-base leading-relaxed mb-8">
+              A matemática perfeita entre a geometria do rosto e a alquimia de cores exclusivas para iluminar sua identidade com naturalidade absoluta.
+            </p>
+            <div class="w-12 h-[1px] bg-champagneGold"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Panel 2: Spa Capilar -->
+      <div class="service-panel relative transition-all duration-[800ms] ease-[cubic-bezier(0.4,0,0.2,1)] bg-white/[0.015] border border-white/10 rounded-[2rem] overflow-hidden cursor-pointer group">
+        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=1000" alt="Spa Capilar" class="absolute inset-0 w-full h-full object-cover transition-all duration-[1.5s] scale-110 opacity-0 mix-blend-overlay panel-bg" />
+        
+        <div class="content-collapsed absolute inset-0 flex items-center justify-center transition-opacity duration-500">
+           <h3 class="font-serif text-xl md:text-3xl text-silverSteel/40 tracking-[0.3em] uppercase md:-rotate-90 whitespace-nowrap transition-transform duration-500 group-hover:text-champagneGold/50 group-hover:scale-110">Spa Clínico</h3>
+        </div>
+        
+        <div class="content-expanded absolute inset-0 p-8 md:p-12 flex flex-col justify-end transition-all duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent z-0"></div>
+          <div class="absolute inset-0 bg-gradient-to-b from-champagneGold/10 to-transparent z-0 mix-blend-overlay"></div>
+          
+          <div class="relative z-10 transform transition-transform duration-700 content-inner">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-champagneGold mb-6 border border-white/20 shadow-[0_0_30px_rgba(212,178,111,0.2)]">
+               <span class="iconify w-7 h-7 md:w-8 md:h-8" data-icon="lucide:leaf"></span>
+            </div>
+            <h3 class="font-serif text-3xl md:text-5xl text-white mb-4 tracking-tight drop-shadow-lg">Spa Capilar</h3>
+            <p class="text-silverSteel font-light max-w-sm text-sm md:text-base leading-relaxed mb-8">
+              Rituais profundos de cura e descompressão. Recuperação molecular dos fios através de botânica de altíssima performance.
+            </p>
+            <div class="w-12 h-[1px] bg-champagneGold"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Mega Hair -->
+      <div class="service-panel relative transition-all duration-[800ms] ease-[cubic-bezier(0.4,0,0.2,1)] bg-white/[0.015] border border-white/10 rounded-[2rem] overflow-hidden cursor-pointer group">
+        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059e98b?auto=format&fit=crop&q=80&w=1000" alt="Mega Hair" class="absolute inset-0 w-full h-full object-cover transition-all duration-[1.5s] scale-110 opacity-0 mix-blend-overlay panel-bg" />
+        
+        <div class="content-collapsed absolute inset-0 flex items-center justify-center transition-opacity duration-500">
+           <h3 class="font-serif text-xl md:text-3xl text-silverSteel/40 tracking-[0.3em] uppercase md:-rotate-90 whitespace-nowrap transition-transform duration-500 group-hover:text-champagneGold/50 group-hover:scale-110">Mega Hair</h3>
+        </div>
+        
+        <div class="content-expanded absolute inset-0 p-8 md:p-12 flex flex-col justify-end transition-all duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent z-0"></div>
+          <div class="absolute inset-0 bg-gradient-to-b from-champagneGold/10 to-transparent z-0 mix-blend-overlay"></div>
+          
+          <div class="relative z-10 transform transition-transform duration-700 content-inner">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-champagneGold mb-6 border border-white/20 shadow-[0_0_30px_rgba(212,178,111,0.2)]">
+               <span class="iconify w-7 h-7 md:w-8 md:h-8" data-icon="lucide:sparkles"></span>
+            </div>
+            <h3 class="font-serif text-3xl md:text-5xl text-white mb-4 tracking-tight drop-shadow-lg">Extensões de Luxo</h3>
+            <p class="text-silverSteel font-light max-w-sm text-sm md:text-base leading-relaxed mb-8">
+              Extensões de cabelos puros e selecionados a dedo. Volume e comprimento cinematográficos, imperceptíveis ao toque.
+            </p>
+            <div class="w-12 h-[1px] bg-champagneGold"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 4: Styling -->
+      <div class="service-panel relative transition-all duration-[800ms] ease-[cubic-bezier(0.4,0,0.2,1)] bg-white/[0.015] border border-white/10 rounded-[2rem] overflow-hidden cursor-pointer group">
+        <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=1000" alt="Styling" class="absolute inset-0 w-full h-full object-cover transition-all duration-[1.5s] scale-110 opacity-0 mix-blend-overlay panel-bg" />
+        
+        <div class="content-collapsed absolute inset-0 flex items-center justify-center transition-opacity duration-500">
+           <h3 class="font-serif text-xl md:text-3xl text-silverSteel/40 tracking-[0.3em] uppercase md:-rotate-90 whitespace-nowrap transition-transform duration-500 group-hover:text-champagneGold/50 group-hover:scale-110">Styling</h3>
+        </div>
+        
+        <div class="content-expanded absolute inset-0 p-8 md:p-12 flex flex-col justify-end transition-all duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent z-0"></div>
+          <div class="absolute inset-0 bg-gradient-to-b from-champagneGold/10 to-transparent z-0 mix-blend-overlay"></div>
+          
+          <div class="relative z-10 transform transition-transform duration-700 content-inner">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-champagneGold mb-6 border border-white/20 shadow-[0_0_30px_rgba(212,178,111,0.2)]">
+               <span class="iconify w-7 h-7 md:w-8 md:h-8" data-icon="lucide:gem"></span>
+            </div>
+            <h3 class="font-serif text-3xl md:text-5xl text-white mb-4 tracking-tight drop-shadow-lg">Styling & Noivas</h3>
+            <p class="text-silverSteel font-light max-w-sm text-sm md:text-base leading-relaxed mb-8">
+              A arquitetura capilar moldada para noivas e eventos inesquecíveis. Estrutura, durabilidade e sofisticação atemporal.
+            </p>
+            <div class="w-12 h-[1px] bg-champagneGold"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Area -->
+    <div class="mt-20 flex justify-center reveal">
+      <a href="#menu-servicos" class="group flex items-center justify-center gap-4 px-10 py-5 rounded-full border border-white/10 bg-white/[0.02] text-silverSteel transition-all duration-500 hover:border-champagneGold/40 hover:bg-champagneGold/5 backdrop-blur-md hover:shadow-[0_0_30px_rgba(212,178,111,0.1)]">
+        <span class="text-[11px] tracking-[0.2em] uppercase font-bold group-hover:text-champagneGold transition-colors duration-300">Acessar Menu Completo de Serviços</span>
+        <div class="w-8 h-[1px] bg-white/20 group-hover:bg-champagneGold transition-colors duration-300"></div>
+        <span class="iconify w-4 h-4 group-hover:text-champagneGold transition-all duration-300 group-hover:translate-x-2" data-icon="lucide:chevron-right"></span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .service-panel {
+    flex: 1;
+  }
+  .service-panel.is-expanded {
+    flex: 6;
+  }
+  
+  @media (max-width: 768px) {
+    .service-panel.is-expanded {
+      flex: 3;
+    }
+  }
+  
+  /* State when panel is NOT expanded */
+  .service-panel:not(.is-expanded) .content-expanded {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .service-panel:not(.is-expanded) .content-inner {
+    transform: translateY(40px);
+  }
+  .service-panel:not(.is-expanded) .content-collapsed {
+    opacity: 1;
+  }
+  .service-panel:not(.is-expanded) .panel-bg {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  
+  /* State when panel IS expanded */
+  .service-panel.is-expanded .content-collapsed {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .service-panel.is-expanded .content-expanded {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .service-panel.is-expanded .content-inner {
+    transform: translateY(0);
+  }
+  .service-panel.is-expanded .panel-bg {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+</style>
+
+<script>
+  // Add interactivity to the accordion panels
+  const panels = document.querySelectorAll('.service-panel');
+  panels.forEach(panel => {
+    const expandPanel = () => {
+      panels.forEach(p => p.classList.remove('is-expanded'));
+      panel.classList.add('is-expanded');
+    };
+    
+    // Desktop hover
+    panel.addEventListener('mouseenter', () => {
+      if(window.innerWidth >= 768) expandPanel();
+    });
+    
+    // Mobile tap
+    panel.addEventListener('click', expandPanel);
+  });
+</script>

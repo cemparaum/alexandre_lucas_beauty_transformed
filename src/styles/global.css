@@ -109,11 +109,18 @@ h1, h2, h3, h4, h5, h6, .font-title {
   opacity: 0.35;
   z-index: -1;
   animation: float 14s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .liquid-blob {
+    animation: none !important;
+  }
 }
 
 @keyframes float {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(50px, 70px) scale(1.18); }
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(50px, 70px, 0) scale(1.18); }
 }
 
 /* Drifting Stars Background */
@@ -131,11 +138,12 @@ h1, h2, h3, h4, h5, h6, .font-title {
   border-radius: 50%;
   opacity: 0;
   animation: twinkle 4s infinite ease-in-out;
+  will-change: transform, opacity;
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0; transform: scale(0.5); }
-  50% { opacity: 0.6; transform: scale(1.2); }
+  0%, 100% { opacity: 0; transform: scale(0.5) translate3d(0,0,0); }
+  50% { opacity: 0.6; transform: scale(1.2) translate3d(0,0,0); }
 }
 
 /* Custom Cursor */
@@ -297,8 +305,8 @@ h1, h2, h3, h4, h5, h6, .font-title {
 }
 
 @keyframes ken-burns {
-  0% { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(-1%, -1%); }
+  0% { transform: scale(1.05) translate3d(0, 0, 0); }
+  100% { transform: scale(1.15) translate3d(-1%, -1%, 0); }
 }
 
 @keyframes pulse-slow {
@@ -307,7 +315,7 @@ h1, h2, h3, h4, h5, h6, .font-title {
   100% { opacity: 0.2; transform: scale(0.95); }
 }
 
-/* Shooting Star Effects */
+/* Shooting Star Effects - Refactored to avoid layout recalculations */
 .star-container {
   transform: rotate(-45deg);
 }
@@ -318,7 +326,8 @@ h1, h2, h3, h4, h5, h6, .font-title {
   background: linear-gradient(90deg, rgba(212,178,111,0), rgba(212,178,111,1));
   border-radius: 999px;
   filter: drop-shadow(0 0 6px rgba(212,178,111,0.8));
-  animation: tail 5s ease-in-out infinite, shooting 5s ease-in-out infinite;
+  animation: shooting 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .shooting-star::after {
@@ -333,13 +342,8 @@ h1, h2, h3, h4, h5, h6, .font-title {
   box-shadow: 0 0 10px 2px rgba(212, 178, 111, 0.5);
 }
 
-@keyframes tail {
-  0% { width: 0; }
-  30% { width: 150px; }
-  100% { width: 0; }
-}
-
 @keyframes shooting {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(1500px); }
+  0% { transform: scaleX(0) translate3d(0, 0, 0); opacity: 0; }
+  25% { transform: scaleX(1) translate3d(400px, 0, 0); opacity: 1; }
+  60%, 100% { transform: scaleX(0) translate3d(1200px, 0, 0); opacity: 0; }
 }

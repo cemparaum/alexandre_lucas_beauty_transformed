@@ -78,67 +78,66 @@ const {
 
 		<!-- Core Animation and Interactive Script -->
 		<script>
-			// Custom Cursor Trail & Sparkles
+			// Detect touch devices once and for all
+			const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 			const cursor = document.getElementById('cursor');
-			const hoverElements = document.querySelectorAll('.cursor-hover, a, button, input, select, textarea');
 
-			let lastSparkleTime = 0;
-			let isTouchDevice = false;
-			
-			// Detect touch devices to disable custom cursor and prevent it from getting stuck on tap
-			window.addEventListener('touchstart', () => {
-				isTouchDevice = true;
+			if (isTouchDevice) {
 				if (cursor) cursor.style.display = 'none';
-			}, { passive: true, once: true });
-			
-			document.addEventListener('mousemove', (e) => {
-				if (isTouchDevice) return;
+			} else {
+				// Custom Cursor Trail & Sparkles (Only for desktop)
+				const hoverElements = document.querySelectorAll('.cursor-hover, a, button, input, select, textarea');
+				let lastSparkleTime = 0;
 
-				if (cursor) {
-					// Use hardware accelerated transform instead of top/left for buttery smooth 60fps
-					cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
-				}
-				
-				// Throttle sparkle generation to prevent DOM overload on high-polling rate mice
-				const now = Date.now();
-				if (now - lastSparkleTime > 40 && Math.random() < 0.5) {
-					createSparkle(e.clientX, e.clientY);
-					lastSparkleTime = now;
-				}
-			}, { passive: true });
+				const onMouseMove = (e: MouseEvent) => {
+					if (cursor) {
+						// Use hardware accelerated transform instead of top/left for buttery smooth 60fps
+						cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+					}
+					
+					// Throttle sparkle generation to prevent DOM overload on high-polling rate mice
+					const now = Date.now();
+					if (now - lastSparkleTime > 40 && Math.random() < 0.5) {
+						createSparkle(e.clientX, e.clientY);
+						lastSparkleTime = now;
+					}
+				};
 
-			function createSparkle(x: number, y: number) {
-				const sparkle = document.createElement('div');
-				sparkle.className = 'absolute pointer-events-none rounded-full bg-gradient-to-br from-champagneGold to-white';
-				const size = Math.random() * 4 + 2;
-				sparkle.style.width = size + 'px';
-				sparkle.style.height = size + 'px';
-				sparkle.style.left = x + (Math.random() * 20 - 10) + 'px';
-				sparkle.style.top = y + (Math.random() * 20 - 10) + window.scrollY + 'px';
-				sparkle.style.opacity = '0.7';
-				sparkle.style.zIndex = '9998';
-				sparkle.style.transition = 'all 0.8s ease-out';
-				document.body.appendChild(sparkle);
-				
-				setTimeout(() => {
-					sparkle.style.transform = 'translateY(15px) scale(0)';
-					sparkle.style.opacity = '0';
-				}, 50);
-				
-				setTimeout(() => {
-					sparkle.remove();
-				}, 850);
+				document.addEventListener('mousemove', onMouseMove, { passive: true });
+
+				hoverElements.forEach(el => {
+					el.addEventListener('mouseenter', () => cursor?.classList.add('hovered'));
+					el.addEventListener('mouseleave', () => cursor?.classList.remove('hovered'));
+				});
+
+				function createSparkle(x: number, y: number) {
+					const sparkle = document.createElement('div');
+					sparkle.className = 'absolute pointer-events-none rounded-full bg-gradient-to-br from-champagneGold to-white';
+					const size = Math.random() * 4 + 2;
+					sparkle.style.width = size + 'px';
+					sparkle.style.height = size + 'px';
+					sparkle.style.left = x + (Math.random() * 20 - 10) + 'px';
+					sparkle.style.top = y + (Math.random() * 20 - 10) + window.scrollY + 'px';
+					sparkle.style.opacity = '0.7';
+					sparkle.style.zIndex = '9998';
+					sparkle.style.transition = 'all 0.8s ease-out';
+					document.body.appendChild(sparkle);
+					
+					setTimeout(() => {
+						sparkle.style.transform = 'translateY(15px) scale(0)';
+						sparkle.style.opacity = '0';
+					}, 50);
+					
+					setTimeout(() => {
+						sparkle.remove();
+					}, 850);
+				}
 			}
 
-			hoverElements.forEach(el => {
-				el.addEventListener('mouseenter', () => cursor?.classList.add('hovered'));
-				el.addEventListener('mouseleave', () => cursor?.classList.remove('hovered'));
-			});
-
-			// Starry Sparkling Sky Backdrop
+			// Starry Sparkling Sky Backdrop (Reduced on mobile to save paint performance)
 			const starsBackdrop = document.getElementById('stars-backdrop');
 			if (starsBackdrop) {
-				const numStars = 60;
+				const numStars = isTouchDevice ? 25 : 60;
 				for (let i = 0; i < numStars; i++) {
 					const star = document.createElement('div');
 					star.className = 'star';
@@ -153,58 +152,64 @@ const {
 				}
 			}
 
-			// Scroll Reveal Engine
-			function revealOnScroll() {
-				const reveals = document.querySelectorAll('.reveal');
-				const windowHeight = window.innerHeight;
-				const elementVisible = 100;
-
-				reveals.forEach((reveal) => {
-					const elementTop = reveal.getBoundingClientRect().top;
-					if (elementTop < windowHeight - elementVisible) {
-						reveal.classList.add('active');
-					}
-				});
-			}
-			window.addEventListener('scroll', revealOnScroll);
-			revealOnScroll();
-
-			// Parallax scroll engine
-			let ticking = false;
-			
-			function updateParallax() {
-				const parallaxElements = document.querySelectorAll('.parallax-element') as NodeListOf<HTMLElement>;
-				const windowHeight = window.innerHeight;
-
-				parallaxElements.forEach(el => {
-					const speed = parseFloat(el.getAttribute('data-parallax-speed') || '0.1');
-					const parent = el.parentElement;
-					if (parent) {
-						const rect = parent.getBoundingClientRect();
-						const elementTop = rect.top;
-						const elementHeight = rect.height;
-
-						if (elementTop < windowHeight && elementTop + elementHeight > 0) {
-							const center = windowHeight / 2;
-							const elCenter = elementTop + (elementHeight / 2);
-							const diff = center - elCenter;
-							const yPos = diff * speed;
-							
-							el.style.transform = `translateY(${yPos}px)`;
+			// Scroll Reveal Engine using IntersectionObserver (buttery smooth, zero layout thrashing)
+			const revealElements = document.querySelectorAll('.reveal');
+			if (revealElements.length > 0) {
+				const revealObserver = new IntersectionObserver((entries, observer) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('active');
+							observer.unobserve(entry.target); // Stop observing once revealed
 						}
-					}
+					});
+				}, {
+					rootMargin: '0px 0px -80px 0px', // triggers slightly before elements enter viewport
+					threshold: 0.05
 				});
-				ticking = false;
+
+				revealElements.forEach(el => revealObserver.observe(el));
 			}
 
-			window.addEventListener('scroll', () => {
-				if (!ticking) {
-					window.requestAnimationFrame(updateParallax);
-					ticking = true;
-				}
-			}, { passive: true });
+			// Parallax scroll engine (Cached elements, disabled on mobile to avoid jank)
+			if (!isTouchDevice && window.innerWidth >= 768) {
+				const parallaxElements = document.querySelectorAll('.parallax-element') as NodeListOf<HTMLElement>;
+				if (parallaxElements.length > 0) {
+					let ticking = false;
+					
+					const updateParallax = () => {
+						const windowHeight = window.innerHeight;
 
-			updateParallax();
+						parallaxElements.forEach(el => {
+							const speed = parseFloat(el.getAttribute('data-parallax-speed') || '0.1');
+							const parent = el.parentElement;
+							if (parent) {
+								const rect = parent.getBoundingClientRect();
+								const elementTop = rect.top;
+								const elementHeight = rect.height;
+
+								if (elementTop < windowHeight && elementTop + elementHeight > 0) {
+									const center = windowHeight / 2;
+									const elCenter = elementTop + (elementHeight / 2);
+									const diff = center - elCenter;
+									const yPos = diff * speed;
+									
+									el.style.transform = `translate3d(0, ${yPos}px, 0)`; // 3D transform for hardware acceleration
+								}
+							}
+						});
+						ticking = false;
+					};
+
+					window.addEventListener('scroll', () => {
+						if (!ticking) {
+							window.requestAnimationFrame(updateParallax);
+							ticking = true;
+						}
+					}, { passive: true });
+
+					updateParallax();
+				}
+			}
 
 			// Back to Top Button Logic
 			const backToTopBtn = document.getElementById('back-to-top');

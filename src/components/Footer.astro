@@ -2,7 +2,7 @@
 // src/components/Footer.astro
 ---
 
-<footer class="relative pt-24 pb-12 border-t border-[#b88e3c]/30 bg-[#1c1936]/90 backdrop-blur-xl z-10 overflow-hidden">
+<footer class="relative pt-24 pb-12 border-t border-[#b88e3c]/30 bg-[#1C1937]/90 backdrop-blur-xl z-10 overflow-hidden">
   
   <!-- Subtle top glow -->
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#b88e3c] to-transparent opacity-50"></div>
@@ -12,17 +12,18 @@
       
       <!-- Brand & Logo -->
       <div class="lg:col-span-1">
-        <a href={import.meta.env.BASE_URL} class="inline-block mb-6 cursor-pointer cursor-hover">
-          <img src={import.meta.env.BASE_URL + "images/logoAlexandre.png"} alt="ALEXANDRE LUCAS Beauty Transformed" class="h-10 w-auto object-contain mix-blend-lighten opacity-90" />
+        <a href={import.meta.env.BASE_URL} class="flex flex-col gap-3 mb-6 cursor-pointer cursor-hover items-center w-fit group">
+          <img src={import.meta.env.BASE_URL + "images/ArteLogo.png"} alt="ALEXANDRE LUCAS" class="h-10 w-auto object-contain mix-blend-lighten opacity-90 transition-transform duration-700 group-hover:scale-105" />
+          <img src={import.meta.env.BASE_URL + "images/nomelogo.png"} alt="Beauty Transformed" class="h-6 w-auto object-contain mix-blend-lighten opacity-90 transition-transform duration-700 group-hover:scale-105" />
         </a>
         <p class="text-white/70 font-light text-sm leading-relaxed mb-6">
           O santuário da alta estética capilar, onde exclusividade e arte se encontram em total privacidade.
         </p>
         <div class="flex gap-4">
-          <a href="#" class="w-8 h-8 rounded-full border border-[#b88e3c]/40 flex items-center justify-center text-[#b88e3c] hover:bg-[#c1c6d3] hover:text-[#1c1936] hover:border-[#c1c6d3] transition-all duration-300">
+          <a href="#" class="w-8 h-8 rounded-full border border-[#b88e3c]/40 flex items-center justify-center text-[#b88e3c] hover:bg-[#c1c6d3] hover:text-[#1C1937] hover:border-[#c1c6d3] transition-all duration-300">
             <span class="iconify w-4 h-4" data-icon="ri:instagram-line"></span>
           </a>
-          <a href="#" class="w-8 h-8 rounded-full border border-[#b88e3c]/40 flex items-center justify-center text-[#b88e3c] hover:bg-[#c1c6d3] hover:text-[#1c1936] hover:border-[#c1c6d3] transition-all duration-300">
+          <a href="#" class="w-8 h-8 rounded-full border border-[#b88e3c]/40 flex items-center justify-center text-[#b88e3c] hover:bg-[#c1c6d3] hover:text-[#1C1937] hover:border-[#c1c6d3] transition-all duration-300">
             <span class="iconify w-4 h-4" data-icon="ri:whatsapp-line"></span>
           </a>
         </div>

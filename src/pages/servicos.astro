@@ -27,144 +27,142 @@ import Footer from '../components/Footer.astro';
   </header>
 
   <!-- Service Pillars -->
-  <main class="relative z-10 pb-32">
+  <main class="relative z-10">
     
-    <!-- Service 1: Visagismo (Navy Dark transparent) -->
-    <section id="visagismo" class="py-24 md:py-32 px-6 relative">
+    <!-- Service 1: Makeup & Penteados -->
+    <section id="penteados" class="py-24 md:py-32 px-6 relative">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="order-2 lg:order-1 reveal">
           <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden group border border-white/10 shadow-[0_0_40px_rgba(212,178,111,0.05)]">
-            <img src={import.meta.env.BASE_URL + "images/visagismo.jpg"} alt="Visagismo e Cor" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-105" />
+            <img src={import.meta.env.BASE_URL + "images/IMG_8468.jpeg"} alt="Makeup & Penteados" class="w-full h-full object-cover object-[15%_25%] transition-transform duration-[1.5s] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-105" />
             <div class="absolute inset-0 bg-gradient-to-t from-navyDark/90 via-transparent to-transparent"></div>
           </div>
         </div>
         <div class="order-1 lg:order-2 space-y-8 reveal delay-100">
           <h2 class="font-serif text-4xl md:text-5xl text-champagneGold tracking-tight drop-shadow-lg">
-            Design de Corte &<br/>Assinatura de Cor
+            Makeup & Penteados<br/>para Ocasiões Especiais
           </h2>
           <div class="space-y-6">
             <div>
               <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">A Técnica</h4>
-              <p class="text-silverSteel font-light leading-relaxed">Um estudo arquitetônico do seu rosto baseado na proporção áurea. A cor é pintada à mão, criando pontos de luz estratégicos que realçam seu subtom de pele, num processo totalmente livre de amônia oxidativa agressiva.</p>
+              <p class="text-silverSteel font-light leading-relaxed">Produção personalizada que estuda a simetria facial para criar uma maquiagem de alta definição e penteados desenhados sob medida para events corporativos, festas e momentos marcantes.</p>
             </div>
             <div>
-              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">Botânica & Produtos</h4>
-              <p class="text-silverSteel font-light leading-relaxed">Pigmentos infusionados com óleos essenciais de orquídea negra e trufa branca, garantindo a integridade absoluta da fibra enquanto a cor é revelada.</p>
+              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">Produtos & Durabilidade</h4>
+              <p class="text-silverSteel font-light leading-relaxed">Fixação de alta costura com blindagem de pele resistente à água, lágrimas e atrito, garantindo uma produção impecável durante todo o evento.</p>
             </div>
             <div>
               <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">A Sensação</h4>
-              <p class="text-silverSteel font-light leading-relaxed">O despertar de uma identidade visual que sempre foi sua, mas que agora brilha com clareza cristalina. Sinta-se compreendida e perfeitamente emoldurada.</p>
+              <p class="text-silverSteel font-light leading-relaxed">Sentir-se radiante e confiante, com uma beleza sob medida que valoriza seus traços naturais sem pesar.</p>
             </div>
           </div>
           <div class="pt-8 border-t border-white/10 flex items-center justify-between">
-            <span class="text-white/60 font-mono text-[10px] uppercase tracking-widest">Duração: 3 a 5 horas</span>
+            <span class="text-white/60 font-mono text-[10px] uppercase tracking-widest">Duração: 2 a 3 horas</span>
+            <span class="text-champagneGold font-serif text-2xl font-bold">A partir de R$ 900</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service 2: Alisamentos -->
+    <section id="alisamentos" class="py-24 md:py-32 px-6 relative bg-[#2a2550]/30 backdrop-blur-md border-y border-champagneGold/10">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8 reveal">
+          <h2 class="font-serif text-4xl md:text-5xl text-champagneGold tracking-tight drop-shadow-lg">
+            Alisamentos &<br/>Alinhamento Térmico
+          </h2>
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">A Técnica</h4>
+              <p class="text-silverSteel font-light leading-relaxed">Técnicas avançadas de redução de volume e alinhamento térmico selando as cutículas com perfeição para acabar com o frizz indesejado, preservando a saúde interna do fio.</p>
+            </div>
+            <div>
+              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">Tecnologia & Proteção</h4>
+              <p class="text-silverSteel font-light leading-relaxed">Tratamento termoativo enriquecido com aminoácidos nobres e óleos essenciais para nutrir a fibra capilar profundamente enquanto alisa.</p>
+            </div>
+            <div>
+              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">A Sensação</h4>
+              <p class="text-silverSteel font-light leading-relaxed">Cabelos com brilho espelhado reflexivo, maciez incrível e uma praticidade excepcional no dia a dia.</p>
+            </div>
+          </div>
+          <div class="pt-8 border-t border-white/10 flex items-center justify-between">
+            <span class="text-white/60 font-mono text-[10px] uppercase tracking-widest">Duração: 3 a 4 horas</span>
+            <span class="text-champagneGold font-serif text-2xl font-bold">A partir de R$ 1.200</span>
+          </div>
+        </div>
+        <div class="reveal delay-100">
+          <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden group border border-champagneGold/20 shadow-[0_0_50px_rgba(212,178,111,0.08)]">
+            <img src={import.meta.env.BASE_URL + "images/IMG_0279.jpeg"} alt="Alisamentos" class="w-full h-full object-cover object-[center_35%] transition-transform duration-[1.5s] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navyDark/90 via-transparent to-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service 3: Luzes -->
+    <section id="luzes" class="py-24 md:py-32 px-6 relative">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1 reveal">
+          <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden group border border-white/10 shadow-[0_0_40px_rgba(212,178,111,0.05)]">
+            <img src={import.meta.env.BASE_URL + "images/7B1437A6-F501-427E-9049-68801F457A12.jpeg"} alt="Luzes e Mechas" class="w-full h-full object-cover object-[center_40%] transition-transform duration-[1.5s] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navyDark/90 via-transparent to-transparent"></div>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2 space-y-8 reveal delay-100">
+          <h2 class="font-serif text-4xl md:text-5xl text-champagneGold tracking-tight drop-shadow-lg">
+            Luzes, Mechas &<br/>Loiros de Luxo
+          </h2>
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">A Técnica</h4>
+              <p class="text-silverSteel font-light leading-relaxed">Técnicas de clareamento premium e personalização de loiros adaptados ao seu tom de pele. Descoloração de alta performance com transição imperceptível.</p>
+            </div>
+            <div>
+              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">Tratamento Integrado</h4>
+              <p class="text-silverSteel font-light leading-relaxed">Uso obrigatório de protetores de pontes estruturais (Plex) que bloqueiam os danos químicos, preservando a integridade e saúde da fibra capilar.</p>
+            </div>
+            <div>
+              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">A Sensação</h4>
+              <p class="text-silverSteel font-light leading-relaxed">Um loiro radiante e tridimensional com movimento natural, fios fortes e um acabamento que exala sofisticação.</p>
+            </div>
+          </div>
+          <div class="pt-8 border-t border-white/10 flex items-center justify-between">
+            <span class="text-white/60 font-mono text-[10px] uppercase tracking-widest">Duração: 4 a 6 horas</span>
             <span class="text-champagneGold font-serif text-2xl font-bold">A partir de R$ 1.800</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Service 2: Spa Capilar (Navy Brand overlay) -->
-    <section id="spa" class="py-24 md:py-32 px-6 relative bg-[#2a2550]/30 backdrop-blur-md border-y border-champagneGold/10">
+    <!-- Service 4: Cortes -->
+    <section id="cortes" class="pt-24 md:pt-32 pb-12 md:pb-16 px-6 relative bg-[#2a2550]/30 backdrop-blur-md border-t border-champagneGold/10">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="space-y-8 reveal">
           <h2 class="font-serif text-4xl md:text-5xl text-champagneGold tracking-tight drop-shadow-lg">
-            Spa Capilar &<br/>Cura Estrutural
+            Corte & Visagismo<br/>de Precisão
           </h2>
           <div class="space-y-6">
             <div>
               <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">A Técnica</h4>
-              <p class="text-silverSteel font-light leading-relaxed">Uma terapia multissensorial focada na reconstrução do cimento intracelular do fio e na desintoxicação do couro cabeludo através de massagens de reflexologia craniana profundas.</p>
+              <p class="text-silverSteel font-light leading-relaxed">Cortes esculpidos milimetricamente para emoldurar seu rosto. Aplicação de técnicas internacionais de precisão alinhadas a um estudo de visagismo individualizado.</p>
             </div>
             <div>
-              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">Botânica & Produtos</h4>
-              <p class="text-silverSteel font-light leading-relaxed">Máscaras de nanotecnologia francesa enriquecidas com ácido hialurônico de baixo peso molecular, caviar cru e extrato de pérolas maceradas do Taiti.</p>
-            </div>
-            <div>
-              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">A Sensação</h4>
-              <p class="text-silverSteel font-light leading-relaxed">Uma imersão de profundo relaxamento onde o stress derrete. Os fios ressurgem espessos, com brilho reflexivo de espelho e uma maciez que convida ao toque contínuo.</p>
-            </div>
-          </div>
-          <div class="pt-8 border-t border-white/10 flex items-center justify-between">
-            <span class="text-white/60 font-mono text-[10px] uppercase tracking-widest">Duração: 1.5 horas</span>
-            <span class="text-champagneGold font-serif text-2xl font-bold">R$ 850</span>
-          </div>
-        </div>
-        <div class="reveal delay-100">
-          <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden group border border-champagneGold/20 shadow-[0_0_50px_rgba(212,178,111,0.08)]">
-            <img src={import.meta.env.BASE_URL + "images/spa.jpg"} alt="Spa Capilar" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-navyDark/90 via-transparent to-transparent"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Service 3: Extensões (Navy Dark transparent) -->
-    <section id="extensoes" class="py-24 md:py-32 px-6 relative">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="order-2 lg:order-1 reveal">
-          <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden group border border-white/10 shadow-[0_0_40px_rgba(212,178,111,0.05)]">
-            <img src={import.meta.env.BASE_URL + "images/mega.jpg"} alt="Extensões de Luxo" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-navyDark/90 via-transparent to-transparent"></div>
-          </div>
-        </div>
-        <div class="order-1 lg:order-2 space-y-8 reveal delay-100">
-          <h2 class="font-serif text-4xl md:text-5xl text-champagneGold tracking-tight drop-shadow-lg">
-            Extensões de Cabelo<br/>Imperceptíveis
-          </h2>
-          <div class="space-y-6">
-            <div>
-              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">A Técnica</h4>
-              <p class="text-silverSteel font-light leading-relaxed">Microcápsulas de queratina e fitas adesivas invisíveis de última geração, aplicadas com tensão matemática exata para proteger os folículos originais. Uma fusão tão perfeita que desafia o olhar.</p>
-            </div>
-            <div>
-              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">Botânica & Produtos</h4>
-              <p class="text-silverSteel font-light leading-relaxed">Cabelos eslavos crus 100% humanos e virgens (gold standard internacional), selecionados individualmente por calibre e movimento, polimerizados com queratina italiana hipoalergênica.</p>
+              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">Finalização & Cuidados</h4>
+              <p class="text-silverSteel font-light leading-relaxed">Produtos finalizadores de alta performance que modelam, protegem do calor e destacam as camadas e texturas do novo corte.</p>
             </div>
             <div>
               <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">A Sensação</h4>
-              <p class="text-silverSteel font-light leading-relaxed">O impacto inebriante de ter o volume e o comprimento dos sonhos em poucas horas, com tanta leveza e fluidez que você mesma esquecerá que está usando extensões.</p>
-            </div>
-          </div>
-          <div class="pt-8 border-t border-white/10 flex items-center justify-between">
-            <span class="text-white/60 font-mono text-[10px] uppercase tracking-widest">Duração: 4 a 6 horas</span>
-            <span class="text-champagneGold font-serif text-2xl font-bold">Sob Consulta</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Service 4: Styling & Noivas (Navy Brand overlay) -->
-    <section id="styling" class="py-24 md:py-32 px-6 relative bg-[#2a2550]/30 backdrop-blur-md border-y border-champagneGold/10">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="space-y-8 reveal">
-          <h2 class="font-serif text-4xl md:text-5xl text-champagneGold tracking-tight drop-shadow-lg">
-            Noivas & Produção<br/>Cinematográfica
-          </h2>
-          <div class="space-y-6">
-            <div>
-              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">A Técnica</h4>
-              <p class="text-silverSteel font-light leading-relaxed">Arquitetura de penteados focada em durabilidade estrutural extrema (resistente à gravidade, humidade e 12h de festa) combinada com maquiagem HD resistente à água e técnica de blindagem de pele.</p>
-            </div>
-            <div>
-              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">Botânica & Produtos</h4>
-              <p class="text-silverSteel font-light leading-relaxed">Lacas de fixação flexível francesas, primers de diamante refletivo e as paletas de alta costura mais exclusivas do mercado internacional (como Tom Ford e Clé de Peau).</p>
-            </div>
-            <div>
-              <h4 class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 mb-2 font-bold">A Sensação</h4>
-              <p class="text-silverSteel font-light leading-relaxed">Sentir-se não apenas inesquecivelmente radiante, mas blindada com a confiança inabalável de que sua beleza permanecerá impecável do primeiro passo até a última dança.</p>
+              <p class="text-silverSteel font-light leading-relaxed">Um corte leve com caimento e balanço perfeitos, elevando a sua expressão pessoal e simplificando o seu styling diário.</p>
             </div>
           </div>
           <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <span class="text-white/60 font-mono text-[10px] uppercase tracking-widest">Menu de Noivas Privé</span>
-            <a href={import.meta.env.BASE_URL + "#contato"} class="px-8 py-3 bg-champagneGold text-navyDark font-mono font-bold uppercase tracking-widest text-[10px] rounded hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all">
-              Agendar Prova
-            </a>
+            <span class="text-white/60 font-mono text-[10px] uppercase tracking-widest">Duração: 1 a 1.5 horas</span>
+            <span class="text-champagneGold font-serif text-2xl font-bold">A partir de R$ 350</span>
           </div>
         </div>
         <div class="reveal delay-100">
           <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden group border border-champagneGold/20 shadow-[0_0_50px_rgba(212,178,111,0.08)]">
-            <img src={import.meta.env.BASE_URL + "images/styling.jpg"} alt="Noivas e Styling" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-105" />
+            <img src={import.meta.env.BASE_URL + "images/2F413BC7-2EC3-4C90-AF5E-8834F0FCF2CD.jpeg"} alt="Corte e Visagismo" class="w-full h-full object-cover object-[center_30%] transition-transform duration-[1.5s] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-105" />
             <div class="absolute inset-0 bg-gradient-to-t from-navyDark/90 via-transparent to-transparent"></div>
           </div>
         </div>

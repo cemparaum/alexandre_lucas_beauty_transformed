@@ -16,26 +16,297 @@
     <div class="w-[1px] h-24 bg-gradient-to-b from-transparent via-champagneGold/30 to-white/10 mt-20"></div>
   </div>
 
-  <!-- Parallax BG Wrapper with Luxury Editorial Photography -->
+  <!-- Parallax BG Wrapper with Animated Slideshow -->
   <div class="absolute inset-0 z-0 overflow-hidden">
-    <!-- 
-      Luxury Editorial Backdrop Suggestion:
-      Cinematic, low-key lighting close-up of dark/blonde hair flow with golden light leaking, 
-      conveying movement, health, and sophistication. The background image uses high-contrast 
-      monochrome or desaturated styling to keep the deep Midnight Navy mood.
-    -->
-    <img 
-      alt="Estética de Luxo e Cabelo Alta Costura" 
-      class="parallax-element w-full h-[120%] object-cover opacity-25 will-change-transform scale-105 animate-ken-burns" 
-      data-parallax-speed="0.25" 
-      src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=1800"
-    />
+    <div class="parallax-element absolute inset-0 w-full h-[108%] will-change-transform" id="hero-slideshow" data-parallax-speed="0.12">
+      
+      <!-- Slide 1 -->
+      <div class="slide-wrapper active absolute inset-0 w-full h-full">
+        <!-- Left Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 left-[2%] lg:left-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/fotoperfil.jpeg"} 
+            alt="Alexandre Lucas - O Fundador" 
+            class="slide w-full h-full object-cover object-[center_20%] will-change-transform" 
+          />
+        </div>
+        <!-- Right Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 right-[2%] lg:right-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_8468.jpeg"} 
+            alt="Penteados & Makeup de Noiva" 
+            class="slide w-full h-full object-cover object-[center_18%] will-change-transform" 
+          />
+        </div>
+        <!-- Center Photo (Mobile) -->
+        <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full h-full md:hidden">
+          <img 
+            src={import.meta.env.BASE_URL + "images/fotoperfil.jpeg"} 
+            alt="Alexandre Lucas - O Fundador" 
+            class="slide w-full h-full object-cover object-[center_20%] will-change-transform" 
+          />
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide-wrapper absolute inset-0 w-full h-full">
+        <!-- Left Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 left-[2%] lg:left-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_8468.jpeg"} 
+            alt="Penteados & Makeup de Noiva" 
+            class="slide w-full h-full object-cover object-[center_18%] will-change-transform" 
+          />
+        </div>
+        <!-- Right Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 right-[2%] lg:right-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/7B1437A6-F501-427E-9049-68801F457A12.jpeg"} 
+            alt="Luzes & Mechas de Luxo" 
+            class="slide w-full h-full object-cover object-[center_35%] will-change-transform" 
+          />
+        </div>
+        <!-- Center Photo (Mobile) -->
+        <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full h-full md:hidden">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_8468.jpeg"} 
+            alt="Penteados & Makeup de Noiva" 
+            class="slide w-full h-full object-cover object-[center_18%] will-change-transform" 
+          />
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide-wrapper absolute inset-0 w-full h-full">
+        <!-- Left Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 left-[2%] lg:left-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/7B1437A6-F501-427E-9049-68801F457A12.jpeg"} 
+            alt="Luzes & Mechas de Luxo" 
+            class="slide w-full h-full object-cover object-[center_35%] will-change-transform" 
+          />
+        </div>
+        <!-- Right Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 right-[2%] lg:right-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_0279.jpeg"} 
+            alt="Alisamento Capilar Premium" 
+            class="slide w-full h-full object-cover object-[center_20%] will-change-transform" 
+          />
+        </div>
+        <!-- Center Photo (Mobile) -->
+        <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full h-full md:hidden">
+          <img 
+            src={import.meta.env.BASE_URL + "images/7B1437A6-F501-427E-9049-68801F457A12.jpeg"} 
+            alt="Luzes & Mechas de Luxo" 
+            class="slide w-full h-full object-cover object-[center_35%] will-change-transform" 
+          />
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide-wrapper absolute inset-0 w-full h-full">
+        <!-- Left Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 left-[2%] lg:left-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_0279.jpeg"} 
+            alt="Alisamento Capilar Premium" 
+            class="slide w-full h-full object-cover object-[center_20%] will-change-transform" 
+          />
+        </div>
+        <!-- Right Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 right-[2%] lg:right-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/2F413BC7-2EC3-4C90-AF5E-8834F0FCF2CD.jpeg"} 
+            alt="Cortes & Visagismo de Precisão" 
+            class="slide w-full h-full object-cover object-[center_22%] will-change-transform" 
+          />
+        </div>
+        <!-- Center Photo (Mobile) -->
+        <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full h-full md:hidden">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_0279.jpeg"} 
+            alt="Alisamento Capilar Premium" 
+            class="slide w-full h-full object-cover object-[center_20%] will-change-transform" 
+          />
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="slide-wrapper absolute inset-0 w-full h-full">
+        <!-- Left Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 left-[2%] lg:left-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/2F413BC7-2EC3-4C90-AF5E-8834F0FCF2CD.jpeg"} 
+            alt="Cortes & Visagismo de Precisão" 
+            class="slide w-full h-full object-cover object-[center_22%] will-change-transform" 
+          />
+        </div>
+        <!-- Right Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 right-[2%] lg:right-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_0785.jpeg"} 
+            alt="Wavy Styling" 
+            class="slide w-full h-full object-cover object-[center_25%] will-change-transform" 
+          />
+        </div>
+        <!-- Center Photo (Mobile) -->
+        <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full h-full md:hidden">
+          <img 
+            src={import.meta.env.BASE_URL + "images/2F413BC7-2EC3-4C90-AF5E-8834F0FCF2CD.jpeg"} 
+            alt="Cortes & Visagismo de Precisão" 
+            class="slide w-full h-full object-cover object-[center_22%] will-change-transform" 
+          />
+        </div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="slide-wrapper absolute inset-0 w-full h-full">
+        <!-- Left Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 left-[2%] lg:left-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_0785.jpeg"} 
+            alt="Wavy Styling" 
+            class="slide w-full h-full object-cover object-[center_25%] will-change-transform" 
+          />
+        </div>
+        <!-- Right Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 right-[2%] lg:right-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_1095.jpeg"} 
+            alt="Blonde Short Bob styling" 
+            class="slide w-full h-full object-cover object-[center_22%] will-change-transform" 
+          />
+        </div>
+        <!-- Center Photo (Mobile) -->
+        <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full h-full md:hidden">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_0785.jpeg"} 
+            alt="Wavy Styling" 
+            class="slide w-full h-full object-cover object-[center_25%] will-change-transform" 
+          />
+        </div>
+      </div>
+
+      <!-- Slide 7 -->
+      <div class="slide-wrapper absolute inset-0 w-full h-full">
+        <!-- Left Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 left-[2%] lg:left-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_1095.jpeg"} 
+            alt="Blonde Short Bob styling" 
+            class="slide w-full h-full object-cover object-[center_22%] will-change-transform" 
+          />
+        </div>
+        <!-- Right Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 right-[2%] lg:right-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_8474.jpeg"} 
+            alt="Noiva e Vestido de Luxo" 
+            class="slide w-full h-full object-cover object-[center_25%] will-change-transform" 
+          />
+        </div>
+        <!-- Center Photo (Mobile) -->
+        <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full h-full md:hidden">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_1095.jpeg"} 
+            alt="Blonde Short Bob styling" 
+            class="slide w-full h-full object-cover object-[center_22%] will-change-transform" 
+          />
+        </div>
+      </div>
+
+      <!-- Slide 8 -->
+      <div class="slide-wrapper absolute inset-0 w-full h-full">
+        <!-- Left Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 left-[2%] lg:left-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_8474.jpeg"} 
+            alt="Noiva e Vestido de Luxo" 
+            class="slide w-full h-full object-cover object-[center_25%] will-change-transform" 
+          />
+        </div>
+        <!-- Right Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 right-[2%] lg:right-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_8476.jpeg"} 
+            alt="Makeup e Cuidado Facial" 
+            class="slide w-full h-full object-cover object-[center_20%] will-change-transform" 
+          />
+        </div>
+        <!-- Center Photo (Mobile) -->
+        <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full h-full md:hidden">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_8474.jpeg"} 
+            alt="Noiva e Vestido de Luxo" 
+            class="slide w-full h-full object-cover object-[center_25%] will-change-transform" 
+          />
+        </div>
+      </div>
+
+      <!-- Slide 9 -->
+      <div class="slide-wrapper absolute inset-0 w-full h-full">
+        <!-- Left Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 left-[2%] lg:left-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_8476.jpeg"} 
+            alt="Makeup e Cuidado Facial" 
+            class="slide w-full h-full object-cover object-[center_20%] will-change-transform" 
+          />
+        </div>
+        <!-- Right Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 right-[2%] lg:right-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_8469.jpeg"} 
+            alt="Detalhes do Vestido" 
+            class="slide w-full h-full object-cover object-[center_25%] will-change-transform" 
+          />
+        </div>
+        <!-- Center Photo (Mobile) -->
+        <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full h-full md:hidden">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_8476.jpeg"} 
+            alt="Makeup e Cuidado Facial" 
+            class="slide w-full h-full object-cover object-[center_20%] will-change-transform" 
+          />
+        </div>
+      </div>
+
+      <!-- Slide 10 -->
+      <div class="slide-wrapper absolute inset-0 w-full h-full">
+        <!-- Left Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 left-[2%] lg:left-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_8469.jpeg"} 
+            alt="Detalhes do Vestido" 
+            class="slide w-full h-full object-cover object-[center_25%] will-change-transform" 
+          />
+        </div>
+        <!-- Right Photo (Desktop) -->
+        <div class="desktop-slide-col absolute inset-y-0 right-[2%] lg:right-[5%] w-[35%] lg:w-[28%] h-full hidden md:block">
+          <img 
+            src={import.meta.env.BASE_URL + "images/fotoperfil.jpeg"} 
+            alt="Alexandre Lucas - O Criador" 
+            class="slide w-full h-full object-cover object-[center_20%] will-change-transform" 
+          />
+        </div>
+        <!-- Center Photo (Mobile) -->
+        <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full h-full md:hidden">
+          <img 
+            src={import.meta.env.BASE_URL + "images/IMG_8469.jpeg"} 
+            alt="Detalhes do Vestido" 
+            class="slide w-full h-full object-cover object-[center_25%] will-change-transform" 
+          />
+        </div>
+      </div>
+    </div>
+    
     <!-- Deep Navy to Midnight Gradient overlays for luxurious depth -->
-    <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/50 to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-navyDark/80 via-transparent to-navyDark/80"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/40 to-transparent z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-navyDark/65 via-transparent to-navyDark/65 z-10"></div>
     
     <!-- Ripple Effects (Water Drop) originating from top center -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] max-w-[2500px] aspect-square pointer-events-none z-0">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] max-w-[2500px] aspect-square pointer-events-none z-10">
       <div class="ripple-circle" style="animation-delay: 0s;"></div>
       <div class="ripple-circle" style="animation-delay: 3.5s;"></div>
       <div class="ripple-circle" style="animation-delay: 7s;"></div>
@@ -85,9 +356,15 @@
       <!-- Secondary: Explore -->
       <a 
         href={import.meta.env.BASE_URL + "#resultados"} 
-        class="group relative overflow-hidden flex items-center justify-center gap-2 px-10 py-4 rounded-full border border-white/10 bg-white/5 text-silverSteel transition-all duration-500 hover:border-champagneGold/60 hover:bg-champagneGold/10 w-full sm:w-auto backdrop-blur-md hover:shadow-[0_0_30px_rgba(212,178,111,0.2)]"
+        class="group relative p-[1px] overflow-hidden flex items-center justify-center rounded-full w-full sm:w-auto transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,178,111,0.2)]"
       >
-        <span class="relative z-10 text-[12px] md:text-[13px] tracking-[0.2em] uppercase font-medium group-hover:text-champagneGold transition-colors duration-300">Ver Resultados</span>
+        <!-- Animated Rotating Border (exactly like contact form) -->
+        <div class="absolute inset-[-1000%] bg-[conic-gradient(from_0deg,transparent_75%,#d4b26f_100%)] animate-[spin_4s_linear_infinite] pointer-events-none"></div>
+        
+        <!-- Inner Solid Panel -->
+        <div class="relative w-full h-full px-10 py-4 rounded-[calc(9999px-1px)] bg-[#1C1937] flex items-center justify-center gap-2 text-silverSteel group-hover:bg-[#1C1937]/80 transition-colors duration-500">
+          <span class="text-[12px] md:text-[13px] tracking-[0.2em] uppercase font-medium group-hover:text-champagneGold transition-colors duration-300">Ver Resultados</span>
+        </div>
       </a>
     </div>
   </div>
@@ -136,6 +413,18 @@
       }
     }
   });
+
+  // Background Slideshow Cycle Logic
+  const slides = document.querySelectorAll('#hero-slideshow .slide-wrapper');
+  let currentSlide = 0;
+  
+  if (slides.length > 0) {
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 6000); // Cross-fade every 6 seconds
+  }
 </script>
 
 <style>
@@ -182,5 +471,83 @@
       transform: translate(-50%, -50%) scale(1.5);
       opacity: 0;
     }
+  }
+
+  /* Slideshow Styles with GPU Acceleration & Ken Burns Zoom transitions */
+  .slide-wrapper {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    pointer-events: none;
+  }
+  
+  .slide-wrapper.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* Horizontal gradient mask on desktop to fade individual columns into the background */
+  @media (min-width: 768px) {
+    .desktop-slide-col {
+      mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    }
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.00) translate(0, 0);
+    transition: transform 6.5s ease-out;
+    opacity: 0.42;
+  }
+  
+  /* Slide 1 active Ken Burns */
+  #hero-slideshow .slide-wrapper:nth-child(1).active .slide {
+    transform: scale(1.03) translate(-0.2%, -0.1%);
+  }
+  
+  /* Slide 2 active Ken Burns */
+  #hero-slideshow .slide-wrapper:nth-child(2).active .slide {
+    transform: scale(1.03) translate(0.1%, 0.1%);
+  }
+  
+  /* Slide 3 active Ken Burns */
+  #hero-slideshow .slide-wrapper:nth-child(3).active .slide {
+    transform: scale(1.03) translate(-0.1%, 0.1%);
+  }
+  
+  /* Slide 4 active Ken Burns */
+  #hero-slideshow .slide-wrapper:nth-child(4).active .slide {
+    transform: scale(1.03) translate(0.2%, -0.1%);
+  }
+
+  /* Slide 5 active Ken Burns */
+  #hero-slideshow .slide-wrapper:nth-child(5).active .slide {
+    transform: scale(1.03) translate(0%, -0.1%);
+  }
+
+  /* Slide 6 active Ken Burns */
+  #hero-slideshow .slide-wrapper:nth-child(6).active .slide {
+    transform: scale(1.03) translate(-0.15%, -0.15%);
+  }
+
+  /* Slide 7 active Ken Burns */
+  #hero-slideshow .slide-wrapper:nth-child(7).active .slide {
+    transform: scale(1.03) translate(0.15%, 0.15%);
+  }
+
+  /* Slide 8 active Ken Burns */
+  #hero-slideshow .slide-wrapper:nth-child(8).active .slide {
+    transform: scale(1.03) translate(0%, 0.1%);
+  }
+
+  /* Slide 9 active Ken Burns */
+  #hero-slideshow .slide-wrapper:nth-child(9).active .slide {
+    transform: scale(1.03) translate(0.2%, -0.15%);
+  }
+
+  /* Slide 10 active Ken Burns */
+  #hero-slideshow .slide-wrapper:nth-child(10).active .slide {
+    transform: scale(1.03) translate(-0.2%, 0.15%);
   }
 </style>

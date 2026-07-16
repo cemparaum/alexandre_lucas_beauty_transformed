@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navyDark: #1c1936;
+  --color-navyDark: #1C1937;
   --color-navyBrand: #2a2550;
   --color-silverSteel: #c1c6d3;
   --color-champagneGold: #d4b26f;
   --color-goldLight: #edd397;
   --color-goldDark: #b88e3c;
   
-  --color-navy-dark: #1c1936;
+  --color-navy-dark: #1C1937;
   --color-navy-brand: #2a2550;
   --color-silver-steel: #c1c6d3;
   --color-champagne-gold: #d4b26f;
@@ -34,7 +34,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   overflow-x: hidden;
-  background-color: #1c1936; /* Logo Brand Blue */
+  background-color: #1C1937; /* Logo Brand Blue */
   color: #c1c6d3; /* Silver Steel / Soft Slate */
 }
 
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6, .font-title {
   width: 6px; 
 }
 ::-webkit-scrollbar-track { 
-  background: #1c1936; 
+  background: #1C1937; 
 }
 ::-webkit-scrollbar-thumb { 
   background: rgba(255,255,255,0.12); 
@@ -269,7 +269,7 @@ h1, h2, h3, h4, h5, h6, .font-title {
   top: -6px;
   font-size: 0.75rem;
   color: #d4b26f;
-  background-color: #1c1936;
+  background-color: #1C1937;
   padding: 0 0.5rem;
 }
 

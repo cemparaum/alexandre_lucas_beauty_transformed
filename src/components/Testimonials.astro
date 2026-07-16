@@ -1,5 +1,77 @@
 ---
 // src/components/Testimonials.astro
+const transformations = [
+  {
+    img: "IMG_0184.jpeg",
+    title: "Loiro Premium",
+    desc: "Iluminação fria com contraste e profundidade."
+  },
+  {
+    img: "IMG_0279.jpeg",
+    title: "Alinhamento & Brilho",
+    desc: "Tratamento reconstrutor tridimensional."
+  },
+  {
+    img: "IMG_0785.jpeg",
+    title: "Design de Corte",
+    desc: "Corte de precisão alinhado ao visagismo."
+  },
+  {
+    img: "IMG_1095.jpeg",
+    title: "Morena Iluminada",
+    desc: "Nuances quentes para um efeito natural."
+  },
+  {
+    img: "IMG_8284.jpeg",
+    title: "Loiro Manteiga",
+    desc: "Clareamento saudável com tom luxuoso."
+  },
+  {
+    img: "B22B279B-3773-4A71-8545-9EC78ABA6381.png",
+    title: "Loiro Cristal",
+    desc: "Descoloração de alta performance e proteção."
+  },
+  {
+    img: "2F413BC7-2EC3-4C90-AF5E-8834F0FCF2CD.jpeg",
+    title: "Corte Escultural",
+    desc: "Camadas suaves para movimento natural."
+  },
+  {
+    img: "6A2E0D8A-B4FB-4E51-B36B-17314D7BE48D.jpeg",
+    title: "Brushing de Luxo",
+    desc: "Finalização polida e brilho tridimensional."
+  },
+  {
+    img: "7B1437A6-F501-427E-9049-68801F457A12.jpeg",
+    title: "Loiro Champagne",
+    desc: "Iluminação fria e sofisticada para fios finos."
+  },
+  {
+    img: "01f34b29-94b0-4df8-97c2-53475b6bef60.jpeg",
+    title: "Bob Perfeito",
+    desc: "Corte reto com simetria matemática."
+  },
+  {
+    img: "IMG_8469.jpeg",
+    title: "Styling Ondulado",
+    desc: "Finalização glamourosa com ondas marcadas."
+  },
+  {
+    img: "IMG_8473.jpeg",
+    title: "Loiro Perolado",
+    desc: "Tonalidade pérola com toque de seda."
+  },
+  {
+    img: "IMG_8474.jpeg",
+    title: "Bob Clássico",
+    desc: "Corte reto minimalista de alta precisão."
+  },
+  {
+    img: "IMG_9449.jpeg",
+    title: "Ritual Capilar",
+    desc: "Nutrição extrema para fios danificados."
+  }
+];
 ---
 
 <section id="depoimentos" class="py-32 md:py-48 relative overflow-hidden">
@@ -169,163 +241,85 @@
     </div>
   </div>
 
-  <!-- 2. TRANSFORMAÇÕES (VÍDEOS) -->
   <div id="resultados" class="max-w-7xl mx-auto px-6 mt-40 scroll-mt-32">
-    <div class="text-center mb-20 reveal">
-      <div class="inline-flex items-center justify-center gap-3 mb-6">
-        <div class="w-8 h-[1px] bg-silverSteel"></div>
-        <span class="text-[10px] font-mono uppercase tracking-[0.4em] text-silverSteel font-bold">O Antes e o Depois</span>
-        <div class="w-8 h-[1px] bg-silverSteel"></div>
+    <!-- Header with Nav Buttons -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
+      <div class="text-left">
+        <div class="inline-flex items-center gap-3 mb-4">
+          <div class="w-8 h-[1px] bg-silverSteel"></div>
+          <span class="text-[10px] font-mono uppercase tracking-[0.4em] text-silverSteel font-bold">O Antes e o Depois</span>
+        </div>
+        <h2 class="font-serif text-5xl md:text-7xl text-white tracking-tighter">
+          Resultados <span class="italic text-white/50 font-light">Inegáveis</span>
+        </h2>
       </div>
-      <h2 class="font-serif text-5xl md:text-7xl text-white tracking-tighter">
-        Resultados <span class="italic text-white/50 font-light">Inegáveis</span>
-      </h2>
     </div>
 
-    <!-- Video Carousel (Infinite Marquee) -->
-    <div class="relative overflow-hidden w-full py-4 mask-edges">
-      <div class="flex w-max animate-marquee-reverse hover-pause">
-        
+    <!-- Video Carousel (Interactive) -->
+    <div class="relative overflow-hidden w-full mask-edges">
+      <div id="carousel-container" class="flex gap-6 overflow-x-auto py-4 cursor-grab active:cursor-grabbing select-none no-scrollbar">
         <!-- SET 1 -->
-        <div class="flex gap-6 pr-6">
-          <!-- Video 1 -->
-          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
-            <img src="https://images.pexels.com/photos/3993212/pexels-photo-3993212.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 1" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
+        {transformations.map((item) => (
+          <div class="portfolio-card w-[75vw] md:w-[320px] shrink-0 group relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer" data-img={import.meta.env.BASE_URL + "images/" + item.img}>
+            <img src={import.meta.env.BASE_URL + "images/" + item.img} alt={item.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-100 pointer-events-none" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
             
-            <!-- Play Button -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
-              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
+            <!-- Zoom/Detail icon on hover -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)] pointer-events-none">
+              <span class="iconify w-6 h-6 text-white" data-icon="lucide:maximize-2"></span>
             </div>
 
             <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
-              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Loiro Assinatura</h3>
-              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Correção de cor e reconstrução profunda da fibra.</p>
+              <h3 class="font-serif text-xl text-white mb-2 drop-shadow-md">{item.title}</h3>
+              <p class="text-silverSteel/90 font-light text-xs drop-shadow-md">{item.desc}</p>
             </div>
           </div>
-
-          <!-- Video 2 -->
-          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
-            <img src="https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 2" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
-            
-            <!-- Play Button -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
-              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
-            </div>
-
-            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
-              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Visagismo</h3>
-              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Corte estrutural aliado ao estudo de proporções do rosto.</p>
-            </div>
-          </div>
-
-          <!-- Video 3 -->
-          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
-            <img src="https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 3" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
-            
-            <!-- Play Button -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
-              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
-            </div>
-
-            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
-              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Morena Iluminada</h3>
-              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Contraste sutil, preservando a base natural com elegância.</p>
-            </div>
-          </div>
-
-          <!-- Video 4 -->
-          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
-            <img src="https://images.pexels.com/photos/3356170/pexels-photo-3356170.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 4" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
-            
-            <!-- Play Button -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
-              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
-            </div>
-
-            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
-              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Terapia Capilar</h3>
-              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Tratamento intensivo para saúde do couro cabeludo.</p>
-            </div>
-          </div>
-        </div>
-
+        ))}
         <!-- SET 2 (Clone for infinite loop) -->
-        <div class="flex gap-6 pr-6">
-          <!-- Video 1 -->
-          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
-            <img src="https://images.pexels.com/photos/3993212/pexels-photo-3993212.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 1" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
+        {transformations.map((item) => (
+          <div class="portfolio-card w-[75vw] md:w-[320px] shrink-0 group relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer" data-img={import.meta.env.BASE_URL + "images/" + item.img}>
+            <img src={import.meta.env.BASE_URL + "images/" + item.img} alt={item.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-100 pointer-events-none" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
             
-            <!-- Play Button -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
-              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
+            <!-- Zoom/Detail icon on hover -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)] pointer-events-none">
+              <span class="iconify w-6 h-6 text-white" data-icon="lucide:maximize-2"></span>
             </div>
 
             <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
-              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Loiro Assinatura</h3>
-              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Correção de cor e reconstrução profunda da fibra.</p>
+              <h3 class="font-serif text-xl text-white mb-2 drop-shadow-md">{item.title}</h3>
+              <p class="text-silverSteel/90 font-light text-xs drop-shadow-md">{item.desc}</p>
             </div>
           </div>
-
-          <!-- Video 2 -->
-          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
-            <img src="https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 2" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
-            
-            <!-- Play Button -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
-              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
-            </div>
-
-            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
-              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Visagismo</h3>
-              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Corte estrutural aliado ao estudo de proporções do rosto.</p>
-            </div>
-          </div>
-
-          <!-- Video 3 -->
-          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
-            <img src="https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 3" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
-            
-            <!-- Play Button -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
-              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
-            </div>
-
-            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
-              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Morena Iluminada</h3>
-              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Contraste sutil, preservando a base natural com elegância.</p>
-            </div>
-          </div>
-
-          <!-- Video 4 -->
-          <div class="w-[85vw] md:w-[400px] shrink-0 group relative aspect-[9/16] rounded-[2rem] overflow-hidden border border-white/10 hover:border-champagneGold/50 transition-all duration-700 cursor-pointer">
-            <img src="https://images.pexels.com/photos/3356170/pexels-photo-3356170.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transformação 4" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
-            
-            <!-- Play Button -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-champagneGold group-hover:border-champagneGold transition-all duration-500 group-hover:scale-110 shadow-[0_0_40px_rgba(212,178,111,0)] group-hover:shadow-[0_0_40px_rgba(212,178,111,0.6)]">
-              <span class="iconify w-8 h-8 text-white ml-1" data-icon="lucide:play"></span>
-            </div>
-
-            <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
-              <h3 class="font-serif text-2xl text-white mb-2 drop-shadow-md">Terapia Capilar</h3>
-              <p class="text-silverSteel/90 font-light text-sm drop-shadow-md">Tratamento intensivo para saúde do couro cabeludo.</p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 ease-out">
+    <!-- Close Button -->
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white bg-black/30 hover:bg-black/60 rounded-full transition-all p-3 cursor-pointer z-[101] shadow-lg">
+      <span class="iconify w-6 h-6" data-icon="lucide:x"></span>
+    </button>
+    <!-- Modal Content -->
+    <div class="relative max-w-[90vw] max-h-[85vh] flex items-center justify-center">
+      <img id="lightbox-img" src="" alt="Resultado ampliado" class="max-w-full max-h-[85vh] rounded-2xl object-contain border border-white/10 shadow-2xl scale-95 transition-transform duration-300 ease-out" />
     </div>
   </div>
 
 </section>
 
 <style>
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -348,4 +342,149 @@
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   }
+  
+  /* Lightbox active states */
+  #lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #lightbox.active #lightbox-img {
+    transform: scale(1);
+  }
 </style>
+
+<script>
+  const cards = document.querySelectorAll('.portfolio-card');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const container = document.getElementById('carousel-container');
+
+  // 1. Lightbox functionality
+  let isDragging = false;
+
+  if (lightbox && lightboxImg instanceof HTMLImageElement) {
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        // Prevent opening lightbox if user was dragging
+        if (isDragging) return;
+        
+        const imgSrc = card.getAttribute('data-img');
+        if (imgSrc) {
+          lightboxImg.src = imgSrc;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        lightboxImg.src = '';
+      }, 300);
+    };
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === lightboxClose || (lightboxClose && lightboxClose.contains(e.target as Node))) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  // 2. Interactive Carousel (Drag + Auto-scroll)
+  if (container) {
+
+    // Drag to scroll logic
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+    let startDragX = 0;
+    const dragThreshold = 5;
+
+    container.addEventListener('mousedown', (e) => {
+      isDown = true;
+      isDragging = false;
+      startDragX = e.clientX;
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    });
+
+    container.addEventListener('mouseleave', () => {
+      isDown = false;
+    });
+
+    container.addEventListener('mouseup', () => {
+      isDown = false;
+      // Keep isDragging true for a split second to prevent immediate click event
+      setTimeout(() => {
+        isDragging = false;
+      }, 50);
+    });
+
+    container.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      
+      // Determine if dragging based on move threshold
+      if (Math.abs(e.clientX - startDragX) > dragThreshold) {
+        isDragging = true;
+      }
+      
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 1.5; // speed multiplier
+      container.scrollLeft = scrollLeft - walk;
+    });
+
+    // 3. Infinite loop wrapping
+    container.addEventListener('scroll', () => {
+      const halfWidth = container.scrollWidth / 2;
+      if (container.scrollLeft >= halfWidth) {
+        container.scrollLeft -= halfWidth;
+      } else if (container.scrollLeft <= 0) {
+        container.scrollLeft += halfWidth;
+      }
+    });
+
+    // 4. Smooth Auto-scroll with hover/touch pause
+    let autoScrollActive = true;
+    const scrollSpeed = 0.6; // pixels per frame
+
+    function step() {
+      if (container && autoScrollActive && !isDown) {
+        container.scrollLeft += scrollSpeed;
+      }
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+
+    // Pause auto-scroll on hover or touch
+    container.addEventListener('mouseenter', () => {
+      autoScrollActive = false;
+    });
+
+    container.addEventListener('mouseleave', () => {
+      if (!isDown) {
+        autoScrollActive = true;
+      }
+    });
+
+    container.addEventListener('touchstart', () => {
+      autoScrollActive = false;
+    });
+
+    container.addEventListener('touchend', () => {
+      // Resume auto-scroll after a short delay of inactivity
+      setTimeout(() => {
+        if (!isDown) autoScrollActive = true;
+      }, 2500);
+    });
+  }
+</script>
